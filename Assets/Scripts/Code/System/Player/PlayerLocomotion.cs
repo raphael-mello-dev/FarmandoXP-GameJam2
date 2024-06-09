@@ -20,13 +20,13 @@ public class PlayerLocomotion : MonoBehaviour
     
     [Tooltip("If true, only pitch is available")]
     [SerializeField] private bool sideScroller;
-    
+
     [Space(1)]
     [Header("Engine Params")]
     [Space(2)]
-    
-    [Tooltip("The AudioSource of Engine")]
-    [SerializeField] private AudioSource engineSource;
+
+    //[Tooltip("The AudioSource of Engine")]
+    //[SerializeField] private AudioSource engineSource;
 
     [Tooltip("Amount of Increse pitch from AudioSource Engine")]
     [SerializeField] private float pitchIncrease;
@@ -63,8 +63,8 @@ public class PlayerLocomotion : MonoBehaviour
 
         CurrentSpeed = Mathf.Clamp(CurrentSpeed, 0, maxSpeed);
 
-        if (engineSource)
-            engineSource.pitch = ((CurrentSpeed / maxSpeed) * pitchIncrease);
+        //if (engineSource)
+        //    engineSource.pitch = ((CurrentSpeed / maxSpeed) * pitchIncrease);
 
         if (!inputData.Acceleration)
         {
@@ -88,6 +88,7 @@ public class PlayerLocomotion : MonoBehaviour
         // Apply rotation
         transform.localRotation = Quaternion.Euler(pitch, sideScroller ? 0f : yaw, sideScroller ? 0f : roll);
     }
+
     public float GetMaxSpeed()
     {
         return maxSpeed;
