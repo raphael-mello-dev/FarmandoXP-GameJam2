@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public StateMachine GameStateMachine { get; private set; }
+    public AudioManager AudioManager { get; private set; }
 
     void Awake()
     {
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
 
         GameStateMachine = new StateMachine(this);
         GameStateMachine.SwitchState<MenuState>();
+        AudioManager = FindObjectOfType<AudioManager>();
     }
 
     void Start()
