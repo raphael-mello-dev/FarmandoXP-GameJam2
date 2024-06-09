@@ -1,10 +1,11 @@
-using UnityEngine;
+ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MenuButtons : MonoBehaviour
 {
     [SerializeField] private Button playButton;
+    [SerializeField] private Button instructionsButton;
     [SerializeField] private Button optionsButton;
     [SerializeField] private Button creditsButton;
     [SerializeField] private Button exitButton;
@@ -12,6 +13,7 @@ public class MenuButtons : MonoBehaviour
     void Start()
     {
         playButton.onClick.AddListener(OnClickPlayButton);
+        instructionsButton.onClick.AddListener(OnClickInstructionsButton);
         optionsButton.onClick.AddListener(OnClickOptionsButton);
         creditsButton.onClick.AddListener(OnClickCreditsButton);
         exitButton.onClick.AddListener(OnClickExitButton);
@@ -19,18 +21,23 @@ public class MenuButtons : MonoBehaviour
 
     private void OnClickPlayButton()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
         GameManager.Instance.GameStateMachine.SwitchState<GameplayState>();
     }
 
-    private void OnClickOptionsButton()
+    private void OnClickInstructionsButton()
     {
         SceneManager.LoadScene(1);
     }
 
-    private void OnClickCreditsButton()
+    private void OnClickOptionsButton()
     {
         SceneManager.LoadScene(2);
+    }
+
+    private void OnClickCreditsButton()
+    {
+        SceneManager.LoadScene(3);
     }
 
     private void OnClickExitButton()
