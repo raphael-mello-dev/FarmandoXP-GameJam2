@@ -1,6 +1,8 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(PlayerInput))]
 public class PlayerLocomotion : MonoBehaviour
 {
     [Header("Locomotion Params")]
@@ -31,8 +33,9 @@ public class PlayerLocomotion : MonoBehaviour
     [Tooltip("Amount of Increse pitch from AudioSource Engine")]
     [SerializeField] private float pitchIncrease;
 
-    private InputData inputData;
     private CharacterController characterController;
+    private PlayerInput playerInput;
+
     private float currentSpeed = 0f;
     private float yaw = 0f;
 
@@ -40,12 +43,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     void Start()
     {
-        inputData = GetComponentInChildren<InputData>();
-        if (inputData == null)
-        {
-            Debug.LogError("InputData component not found in children.");
-        }
-
+        playerInput = GetComponent<PlayerInput>();
         characterController = GetComponent<CharacterController>();
         if (characterController == null)
         {
@@ -55,17 +53,17 @@ public class PlayerLocomotion : MonoBehaviour
 
     void Update()
     {
-        if (inputData == null || characterController == null) return;
+        if (playerInput.InputData == null || characterController == null) return;
 
         // Update speed based on acceleration and drag
-        if (inputData.Acceleration)
+        if (playerInput.InputData.Acceleration)
             CurrentSpeed += acceleration * Time.deltaTime;
 
         CurrentSpeed = Mathf.Clamp(CurrentSpeed, 0, maxSpeed);
 
         GameManager.Instance.AudioManager.SetEnginePitch((CurrentSpeed / maxSpeed) * pitchIncrease);
 
-        if (!inputData.Acceleration)
+        if (!playerInput.InputData.Acceleration)
         {
             CurrentSpeed = Mathf.Lerp(CurrentSpeed, 0, drag * Time.deltaTime);
         }
@@ -77,11 +75,11 @@ public class PlayerLocomotion : MonoBehaviour
         
         float speedFactor = CurrentSpeed / maxSpeed;
         // Update yaw based on horizontal input
-        yaw += inputData.Movement.x * Time.deltaTime * yawMultiply * speedFactor;
+        yaw += playerInput.InputData.Movement.x * Time.deltaTime * yawMultiply * speedFactor;
 
         // Calculate pitch and roll, reducing them based on current speed
-        float pitch = Mathf.Lerp(0, 20, Mathf.Abs(inputData.Movement.y) * speedFactor) * Mathf.Sign(inputData.Movement.y);
-        float roll = Mathf.Lerp(0, 20, Mathf.Abs(inputData.Movement.x) * speedFactor) * -Mathf.Sign(inputData.Movement.x);
+        float pitch = Mathf.Lerp(0, 20, Mathf.Abs(playerInput.InputData.Movement.y) * speedFactor) * Mathf.Sign(playerInput.InputData.Movement.y);
+        float roll = Mathf.Lerp(0, 20, Mathf.Abs(playerInput.InputData.Movement.x) * speedFactor) * -Mathf.Sign(playerInput.InputData.Movement.x);
 
         // Apply rotation
         transform.localRotation = Quaternion.Euler(pitch, sideScroller ? 0f : yaw, sideScroller ? 0f : roll);

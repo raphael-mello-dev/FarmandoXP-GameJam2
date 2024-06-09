@@ -1,17 +1,17 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputData : MonoBehaviour
+internal class InputMetaData
 {
     private Controls inputControl;
-    
+
     private Vector2 movement;
     private bool acceleration;
 
     public Vector2 Movement { get => movement; set => movement = value; }
     public bool Acceleration { get => acceleration; set => acceleration = value; }
 
-    private void OnEnable()
+    public InputMetaData()
     {
         inputControl = new Controls();
         inputControl.Player.Movement.performed += OnMovement;
@@ -19,23 +19,23 @@ public class InputData : MonoBehaviour
         inputControl.Enable();
     }
 
+    public void Detach()
+    {
+        if (inputControl != null)
+        {
+            inputControl.Player.Movement.performed -= OnMovement;
+            inputControl.Player.Acceleration.performed -= OnAccelerationPeformed;
+            inputControl.Disable();
+        }
+    }
+
     private void OnAccelerationPeformed(InputAction.CallbackContext obj)
     {
         Acceleration = obj.ReadValueAsButton();
     }
 
-    private void OnDisable()
-    {
-        if(inputControl != null)
-        {
-            inputControl.Player.Movement.performed -= OnMovement;
-            inputControl.Disable();
-        }
-    }
-    
     private void OnMovement(InputAction.CallbackContext obj)
     {
         Movement = obj.ReadValue<Vector2>().normalized;
     }
-
 }
