@@ -134,6 +134,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &111213003 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7497152130185960052, guid: b9739a56bc99e0f4fb60a7d4b76426ac, type: 3}
+  m_PrefabInstance: {fileID: 1570229500761817743}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &331268233 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 685019603308995437, guid: b5633fd404f068b4cb4e21fd1aaf052b, type: 3}
@@ -270,12 +281,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8144d5ec732b322438ed39d5b57e5ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temperatureDecayRate: 0.14
-  temperatureIncreaseRate: 0.01
-  batteryDecayRateInShadow: 0.05
-  batery: 1
+  batteryDecayRate: 0.1
+  batteryIncreaseRate: 0.05
+  temperatureDecayRate: 0.05
+  battery: 1
   packageTemperature: 1
+  velocityPercent: 0.6
   foodTemperature: {fileID: 42950491}
+  batteryQuantity: {fileID: 111213003}
+--- !u!114 &666988555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666988549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d61a1e9fcf4d316419f5c57951c30f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &698950787 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1785666861393453052, guid: 088095543e2d652478f77b7571670fa7, type: 3}
@@ -293,7 +318,7 @@ GameObject:
   - component: {fileID: 705507994}
   m_Layer: 0
   m_Name: Directional Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -599,7 +624,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.2588191, y: -0, z: -0, w: 0.9659258}
-  m_LocalPosition: {x: 0, y: 7, z: -129.21043}
+  m_LocalPosition: {x: 0, y: 7.000003, z: -124.80044}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1562,11 +1587,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1785666861393453052, guid: 088095543e2d652478f77b7571670fa7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7
+      value: 7.000003
       objectReference: {fileID: 0}
     - target: {fileID: 1785666861393453052, guid: 088095543e2d652478f77b7571670fa7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -129.21043
+      value: -124.80044
       objectReference: {fileID: 0}
     - target: {fileID: 1785666861393453052, guid: 088095543e2d652478f77b7571670fa7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1846,7 +1871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4499221945992019513, guid: 5f3fa5293529a4c4ca1efb122bdf5906, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -119
+      value: -114.59
       objectReference: {fileID: 0}
     - target: {fileID: 4499221945992019513, guid: 5f3fa5293529a4c4ca1efb122bdf5906, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1887,6 +1912,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7927627600449719311, guid: 5f3fa5293529a4c4ca1efb122bdf5906, type: 3}
       insertIndex: -1
       addedObject: {fileID: 666988554}
+    - targetCorrespondingSourceObject: {fileID: 7927627600449719311, guid: 5f3fa5293529a4c4ca1efb122bdf5906, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 666988555}
   m_SourcePrefab: {fileID: 100100000, guid: 5f3fa5293529a4c4ca1efb122bdf5906, type: 3}
 --- !u!1001 &6022684131684053060
 PrefabInstance:

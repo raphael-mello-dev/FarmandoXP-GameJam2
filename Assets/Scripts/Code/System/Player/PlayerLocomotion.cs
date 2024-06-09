@@ -88,5 +88,8 @@ public class PlayerLocomotion : MonoBehaviour
         // Apply rotation
         transform.localRotation = Quaternion.Euler(pitch, sideScroller ? 0f : yaw, sideScroller ? 0f : roll);
     }
-
+    public float GetMaxSpeed()
+    {
+        return maxSpeed;
+    }
 }
