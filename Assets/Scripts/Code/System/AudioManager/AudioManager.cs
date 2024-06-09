@@ -21,7 +21,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private AudioSource soundtrackAudioSource;
     [SerializeField] private AudioSource sfxAudioSource;
-    
+    [SerializeField] private AudioSource engineAudioSource;
+
     [SerializeField] private SoundtrackConfig[] soundtracksConfig;
     [SerializeField] private SFXConfig[] sfxsConfig;
 
@@ -58,6 +59,22 @@ public class AudioManager : MonoBehaviour
             SFXConfig config = sfxsDict[type];
             sfxAudioSource.PlayOneShot(config.audioClip, config.volume);
         }
+    }
+
+    public void SetEnginePitch(float pitch)
+    {
+        engineAudioSource.pitch = pitch;
+    }
+
+    public void StartEngine()
+    {
+        SetEnginePitch(0f);
+        engineAudioSource.Play();
+    }
+
+    public void StopEngine()
+    {
+        engineAudioSource.Stop();
     }
 }
 

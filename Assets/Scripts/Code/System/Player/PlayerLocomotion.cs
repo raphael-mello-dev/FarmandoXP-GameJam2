@@ -63,8 +63,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         CurrentSpeed = Mathf.Clamp(CurrentSpeed, 0, maxSpeed);
 
-        //if (engineSource)
-        //    engineSource.pitch = ((CurrentSpeed / maxSpeed) * pitchIncrease);
+        GameManager.Instance.AudioManager.SetEnginePitch((CurrentSpeed / maxSpeed) * pitchIncrease);
 
         if (!inputData.Acceleration)
         {
@@ -73,7 +72,6 @@ public class PlayerLocomotion : MonoBehaviour
 
         // Calculate movement direction
         Vector3 forwardMovement = transform.forward * CurrentSpeed * Time.deltaTime;
-
         // Move the player
         characterController.Move(forwardMovement);
         
