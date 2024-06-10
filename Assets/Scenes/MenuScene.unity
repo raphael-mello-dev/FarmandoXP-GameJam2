@@ -553,6 +553,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728331478}
   m_CullTransparentMesh: 1
+--- !u!82 &830055808 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1313235689801226666, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+  m_PrefabInstance: {fileID: 2382540155614109274}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &862950229
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,6 +1756,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1524369247270938287, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5565840431103934202, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
       propertyPath: m_Pitch
       value: 3
@@ -1776,6 +1785,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2382540155614109276}
     - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: menuSFXAudioSource
+      value: 
+      objectReference: {fileID: 830055808}
+    - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
       propertyPath: sfxsConfig.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1791,6 +1804,14 @@ PrefabInstance:
       propertyPath: audiosSourcesConfig.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: sfxsConfig.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: sfxsConfig.Array.data[0].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e0c2e63b6fcdbde41bfd976268684325, type: 3}
     - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
       propertyPath: audiosSourcesConfig.Array.data[0].volume
       value: 0
@@ -1837,6 +1858,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8817580783673002943, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926619515594706792, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

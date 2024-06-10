@@ -28,6 +28,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private AudioSource soundtrackAudioSource;
     [SerializeField] private AudioSource sfxAudioSource;
+    [SerializeField] private AudioSource menuSFXAudioSource;
     [SerializeField] private AudioSource engineAudioSource;
 
     [SerializeField] private SoundtrackConfig[] soundtracksConfig;
@@ -93,6 +94,15 @@ public class AudioManager : MonoBehaviour
         {
             SFXConfig config = sfxsDict[type];
             sfxAudioSource.PlayOneShot(config.audioClip, config.volume);
+        }
+    }
+
+    public void PlayMenuSFX(SFXs type)
+    {
+        if (sfxsDict.ContainsKey(type))
+        {
+            SFXConfig config = sfxsDict[type];
+            menuSFXAudioSource.PlayOneShot(config.audioClip, config.volume);
         }
     }
 
