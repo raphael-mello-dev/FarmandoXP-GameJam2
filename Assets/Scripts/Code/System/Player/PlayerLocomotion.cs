@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(PlayerInput))]
@@ -38,8 +39,12 @@ public class PlayerLocomotion : MonoBehaviour
 
     private float currentSpeed = 0f;
     private float yaw = 0f;
+    
+    //Global direction of Wind
+    private Vector3 externalMove;
 
     public float CurrentSpeed { get => currentSpeed; set => currentSpeed = value; }
+    public Vector3 ExternalMove { get => externalMove; set => externalMove = value; }
 
     void Start()
     {
@@ -54,6 +59,9 @@ public class PlayerLocomotion : MonoBehaviour
     void Update()
     {
         if (playerInput.InputData == null || characterController == null) return;
+
+        // Applies wind at the input and in the wind direction
+        Vector2 Movement = playerInput.InputData.Movement;
 
         // Update speed based on acceleration and drag
         if (playerInput.InputData.Acceleration)
@@ -70,16 +78,23 @@ public class PlayerLocomotion : MonoBehaviour
 
         // Calculate movement direction
         Vector3 forwardMovement = transform.forward * CurrentSpeed * Time.deltaTime;
+
+        // Combine forward movement with external forces like wind
+        Vector3 totalMovement = forwardMovement + ExternalMove * Time.deltaTime;
+
         // Move the player
-        characterController.Move(forwardMovement);
-        
+        characterController.Move(totalMovement);
+
+        ExternalMove = Vector3.zero; // Reset ExternalMove after applying it
+
         float speedFactor = CurrentSpeed / maxSpeed;
+
         // Update yaw based on horizontal input
-        yaw += playerInput.InputData.Movement.x * Time.deltaTime * yawMultiply * speedFactor;
+        yaw += Movement.x * Time.deltaTime * yawMultiply * speedFactor;
 
         // Calculate pitch and roll, reducing them based on current speed
-        float pitch = Mathf.Lerp(0, 20, Mathf.Abs(playerInput.InputData.Movement.y) * speedFactor) * Mathf.Sign(playerInput.InputData.Movement.y);
-        float roll = Mathf.Lerp(0, 20, Mathf.Abs(playerInput.InputData.Movement.x) * speedFactor) * -Mathf.Sign(playerInput.InputData.Movement.x);
+        float pitch = Mathf.Lerp(0, 20, Mathf.Abs(Movement.y) * speedFactor) * Mathf.Sign(Movement.y);
+        float roll = Mathf.Lerp(0, 20, Mathf.Abs(Movement.x) * speedFactor) * -Mathf.Sign(Movement.x);
 
         // Apply rotation
         transform.localRotation = Quaternion.Euler(pitch, sideScroller ? 0f : yaw, sideScroller ? 0f : roll);

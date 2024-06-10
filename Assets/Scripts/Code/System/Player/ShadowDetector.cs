@@ -20,15 +20,18 @@ public class ShadowDetector : MonoBehaviour
         {
             if (hit.collider.gameObject != gameObject)
             {
+                Debug.Log("0");
                 playerData.InShadow = true;
             }
             else
             {
+                Debug.Log("1");
                 playerData.InShadow = false;
             }
         }
         else
         {
+            Debug.Log("2");
             playerData.InShadow = false;
         }
     }
