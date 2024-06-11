@@ -193,7 +193,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00048828125, y: 0.000289917}
+  m_AnchoredPosition: {x: 0.000579834, y: 0.00035095215}
   m_SizeDelta: {x: 800, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &22336731
@@ -220,8 +220,8 @@ MonoBehaviour:
     Designer\nLina Melo - Sound Designer\nMarco Ant\xF4nio - Programador\nRaphael
     Mello - Programador\nTales Santos - Artista 2D"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3088dfdd0c57cb448bfc5e9bed2c008e, type: 2}
+  m_sharedMaterial: {fileID: -2437917576169003920, guid: 3088dfdd0c57cb448bfc5e9bed2c008e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -534,11 +534,23 @@ PrefabInstance:
       value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 4231518066711512871, guid: 0bbf4914b39985d48b3eb535ab85580d, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3088dfdd0c57cb448bfc5e9bed2c008e, type: 2}
+    - target: {fileID: 4231518066711512871, guid: 0bbf4914b39985d48b3eb535ab85580d, type: 3}
       propertyPath: m_fontSizeBase
       value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 4231518066711512871, guid: 0bbf4914b39985d48b3eb535ab85580d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2437917576169003920, guid: 3088dfdd0c57cb448bfc5e9bed2c008e, type: 2}
+    - target: {fileID: 4231518066711512871, guid: 0bbf4914b39985d48b3eb535ab85580d, type: 3}
       propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4231518066711512871, guid: 0bbf4914b39985d48b3eb535ab85580d, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4525951448089032899, guid: 0bbf4914b39985d48b3eb535ab85580d, type: 3}
@@ -921,7 +933,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 991020704}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.9990642
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1537,7 +1549,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 67534572}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9989672
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1735,6 +1747,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1638792127}
   - component: {fileID: 1638792128}
+  - component: {fileID: 1638792129}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1819,6 +1832,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1638792129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638792126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &2095363710
 GameObject:
   m_ObjectHideFlags: 0
