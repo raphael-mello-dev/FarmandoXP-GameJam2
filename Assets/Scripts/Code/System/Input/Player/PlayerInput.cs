@@ -8,7 +8,7 @@ public class PlayerInput : MonoBehaviour
 
     private void OnEnable()
     {
-        InputData = new InputMetaData();
+        InputData = new InputMetaData(this);
     }
 
     private void OnDisable()
