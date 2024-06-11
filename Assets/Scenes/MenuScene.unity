@@ -1905,7 +1905,7 @@ PrefabInstance:
       objectReference: {fileID: 830055808}
     - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
       propertyPath: sfxsConfig.Array.size
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
       propertyPath: soundtrackAudioSource
@@ -1913,7 +1913,7 @@ PrefabInstance:
       objectReference: {fileID: 235521376}
     - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
       propertyPath: soundtracksConfig.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
       propertyPath: audiosSourcesConfig.Array.size
@@ -1924,9 +1924,69 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: sfxsConfig.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: sfxsConfig.Array.data[2].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: sfxsConfig.Array.data[3].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: sfxsConfig.Array.data[4].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: sfxsConfig.Array.data[5].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
       propertyPath: sfxsConfig.Array.data[0].audioClip
       value: 
       objectReference: {fileID: 8300000, guid: e0c2e63b6fcdbde41bfd976268684325, type: 3}
+    - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: sfxsConfig.Array.data[1].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: df5cd4fe0a492554e935022470014464, type: 3}
+    - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: sfxsConfig.Array.data[1].audioType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: sfxsConfig.Array.data[2].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d719ddb85a780fd4c814d4b35b93b9ac, type: 3}
+    - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: sfxsConfig.Array.data[2].audioType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: sfxsConfig.Array.data[3].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9202f494be650b14c9f93a55454db01c, type: 3}
+    - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: sfxsConfig.Array.data[3].audioType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: sfxsConfig.Array.data[4].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 92468893d1517c545a270966a9b1b5c5, type: 3}
+    - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: sfxsConfig.Array.data[4].audioType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: sfxsConfig.Array.data[5].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a7dee9081c1ea0468145283f3c3790c, type: 3}
+    - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: sfxsConfig.Array.data[5].audioType
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
       propertyPath: audiosSourcesConfig.Array.data[0].volume
       value: 0
