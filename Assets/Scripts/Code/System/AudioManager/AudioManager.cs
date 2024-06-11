@@ -20,6 +20,11 @@ public enum Soundtracks
 public enum SFXs
 {
     ButtonClick,
+    Thunder,
+    Rain,
+    Wind,
+    Alarm,
+    Delivery,
     GameOver
 }
 
