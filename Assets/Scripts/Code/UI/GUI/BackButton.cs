@@ -11,6 +11,7 @@ public class BackButton : MonoBehaviour
 
     void OnClickBackButton()
     {
+        GameManager.Instance.AudioManager.PlayMenuSFX(SFXs.ButtonClick);
         SceneManager.LoadScene(0);
     }
 }
