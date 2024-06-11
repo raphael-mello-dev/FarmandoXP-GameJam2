@@ -2,32 +2,47 @@ using UnityEngine;
 
 public class PlayerWindZone : MonoBehaviour
 {
-    private GameObject player;
-
-    //Global Direction of Wind
     [SerializeField] private Vector3 wind;
+    PlayerLocomotion playerLocomotion = null;
+    CharacterController playerController = null;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            player = (GameObject)other.gameObject;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            player.GetComponent<PlayerLocomotion>().ExternalMove = Vector2.zero;
-            player = null;
+             playerLocomotion = other.GetComponent<PlayerLocomotion>();
+             playerController = other.GetComponent<CharacterController>();
         }
     }
 
-    private void Update()
+    private void OnTriggerExit(Collider other)
     {
-        if(player != null)
+        if (other.CompareTag("Player"))
         {
-            player.GetComponent<PlayerLocomotion>().ExternalMove = wind;
+            if (playerLocomotion != null)
+            {
+                playerLocomotion.ExternalMove = Vector3.zero;
+            }
+            playerLocomotion = null;
+            playerController = null;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (playerLocomotion != null && playerController != null)
+            {
+                if (playerController.velocity.magnitude > wind.magnitude)
+                {
+                    playerLocomotion.ExternalMove = Vector3.Lerp(playerLocomotion.ExternalMove, wind, 0.9f);
+                }
+                else
+                {
+                    playerLocomotion.ExternalMove = -playerController.velocity;
+                }
+            }
         }
     }
 }

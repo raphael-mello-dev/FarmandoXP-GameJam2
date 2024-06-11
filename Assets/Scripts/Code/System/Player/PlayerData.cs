@@ -7,7 +7,7 @@ public class PlayerData : MonoBehaviour
     [SerializeField] private PlayerMetaDataSO playerMetaData = null;
     [SerializeField] private float battery = 1;
     [SerializeField] private float packageTemperature = 1;
-    [SerializeField] private float ms;
+    //[SerializeField] private float ms;
    
     private bool withPackage;
     private bool inShadow;
@@ -67,11 +67,9 @@ public class PlayerData : MonoBehaviour
         Color tempColor = Color.HSVToRGB(0.5f - packageTemperature * 0.5f, 1f, 1f);
         foodTemperature.text = "Temp: <color=#" + ColorToHex(tempColor) + "> " + (int)(packageTemperature * 100) + "°C</color>";
 
-        Debug.Log(playerInput.InputData.DelayMicro);
-
-        ms = playerInput.InputData.DelayMicro * 1000f;
-        Color msColor = Color.HSVToRGB((1f - Mathf.Clamp(ms / 500f, 0, 1)) * 0.33f, 1f, 1f);
-        msQuantity.text = "Signal: <color=#" + ColorToHex(msColor) + "> " + (int)(ms) + "ms</color>";
+        //ms = playerInput.InputData.DelayMicro * 1000f;
+        //Color msColor = Color.HSVToRGB((1f - Mathf.Clamp(ms / 500f, 0, 1)) * 0.33f, 1f, 1f);
+        //msQuantity.text = "Signal: <color=#" + ColorToHex(msColor) + "> " + (int)(ms) + "ms</color>";
 
     }
     string ColorToHex(Color color)
