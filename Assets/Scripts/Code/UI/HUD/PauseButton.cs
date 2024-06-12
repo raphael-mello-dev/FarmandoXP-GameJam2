@@ -21,20 +21,21 @@ public class PauseButton : MonoBehaviour
         OnButtonClick();
         pauseButton.SetActive(false);
         menuPanel.SetActive(true);
+        GameManager.Instance.GameStateMachine.SwitchState<PausedState>();
     }
 
     private void OnClickResume()
     {
-        if (GameManager.Instance.IsPaused)
-        {
-            pauseButton.SetActive(true);
-            menuPanel.SetActive(false);
-        }
+        OnButtonClick();
+        pauseButton.SetActive(true);
+        menuPanel.SetActive(false);
+        GameManager.Instance.GameStateMachine.SwitchState<GameplayState>();
     }
 
     private void OnClickExit()
     {
         OnButtonClick();
+        GameManager.Instance.GameStateMachine.SwitchState<MenuState>();
         SceneManager.LoadScene(0);
     }
 

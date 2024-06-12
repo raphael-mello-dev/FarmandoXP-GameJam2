@@ -27,12 +27,7 @@ public class MenuButtons : MonoBehaviour
     private void OnClickPlayButton()
     {
         OnButtonClick();
-
-        if (!GameManager.Instance.IsPaused)
-        {
-            SceneManager.LoadScene(1);
-        }
-
+        SceneManager.LoadScene(1);
         GameManager.Instance.GameStateMachine.SwitchState<GameplayState>();
     }
 
