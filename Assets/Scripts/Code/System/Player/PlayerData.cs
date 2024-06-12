@@ -7,13 +7,12 @@ public class PlayerData : MonoBehaviour
     [SerializeField] private PlayerMetaDataSO playerMetaData = null;
     [SerializeField] private float battery = 1;
     [SerializeField] private float packageTemperature = 1;
-    //[SerializeField] private float ms;
    
     private bool withPackage;
     private bool inShadow;
 
     private PlayerLocomotion playerLocomotion;
-    private PlayerInput playerInput;
+    private Orchestrator orchestrator;
 
     public TMPro.TextMeshProUGUI foodTemperature;
     public TMPro.TextMeshProUGUI batteryQuantity;
@@ -24,8 +23,8 @@ public class PlayerData : MonoBehaviour
 
     private void Start()
     {
+        orchestrator = FindAnyObjectByType<Orchestrator>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
-        playerInput = GetComponent<PlayerInput>();
         battery = 1;
         packageTemperature = 1;
 
@@ -36,6 +35,7 @@ public class PlayerData : MonoBehaviour
 
     private void Update()
     {
+        WithPackage = orchestrator.WithPackage();
         if (!WithPackage)
         {
             packageTemperature = 1;
