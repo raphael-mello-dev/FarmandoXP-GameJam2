@@ -95,10 +95,13 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(SFXs type)
     {
-        if (sfxsDict.ContainsKey(type))
+        if (!GameManager.Instance.IsPaused)
         {
-            SFXConfig config = sfxsDict[type];
-            sfxAudioSource.PlayOneShot(config.audioClip, config.volume);
+            if (sfxsDict.ContainsKey(type))
+            {
+                SFXConfig config = sfxsDict[type];
+                sfxAudioSource.PlayOneShot(config.audioClip, config.volume);
+            }
         }
     }
 
