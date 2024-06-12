@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: 4034ec973825dbc48a8f0121da09bd79, type: 2}
-  scanLinesStretch: 1
+  scanLinesStretch: 0.75
   noiseAmount: 0
   glitchForce: 0

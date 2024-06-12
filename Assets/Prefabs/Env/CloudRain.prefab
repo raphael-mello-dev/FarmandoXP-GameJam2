@@ -516,7 +516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4493808140370446022, guid: 59e6c5a2861683c4a9060f821820a97f, type: 3}
       propertyPath: lightningIncidenceTime
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4841697195036262761, guid: 59e6c5a2861683c4a9060f821820a97f, type: 3}
       propertyPath: m_LocalScale.x
