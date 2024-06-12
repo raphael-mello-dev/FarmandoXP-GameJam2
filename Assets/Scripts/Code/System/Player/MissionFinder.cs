@@ -4,7 +4,7 @@ public class MissionFinder : MonoBehaviour
 {
     private PlayerLocomotion playerLocomotion;
     private Orchestrator orchestrator;
-
+    [SerializeField] private GameObject finder;
     void Start()
     {
         playerLocomotion = GetComponentInParent<PlayerLocomotion>();
@@ -22,6 +22,11 @@ public class MissionFinder : MonoBehaviour
             direction.y = 0;
 
             transform.rotation = Quaternion.LookRotation(direction);
+            finder.SetActive(true);
+        }
+        else
+        {
+            finder.SetActive(false);
         }
         transform.position = playerLocomotion.transform.position;
     }

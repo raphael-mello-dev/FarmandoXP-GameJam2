@@ -6,11 +6,13 @@ public class Orchestrator : MonoBehaviour
     [SerializeField] private Delivery currentTaskView;
     private int currentTask = -1;
     public int CurrentTask { get => currentTask; set => currentTask = value; }
+    public bool finishedDay = false;
 
     private void Start()
     {
         currentTask = -1;
         NextTask();
+        finishedDay = false;
     }
 
     private void NextTask()
@@ -23,8 +25,10 @@ public class Orchestrator : MonoBehaviour
             DayTasks[currentTask].package.SetActive(false);
         }
         currentTask++;
+
         if(currentTask >= DayTasks.Length)
         {
+            finishedDay = true;
             Debug.Log("Finished day!");
             return;
         }
@@ -56,7 +60,7 @@ public class Orchestrator : MonoBehaviour
 
     public GameObject GetNextTarget()
     {
-
+        if (finishedDay) return null;
         if (DayTasks[currentTask].status == MissionStatus.STARTED){
             return DayTasks[currentTask].collectPoint.gameObject;
         }
@@ -69,6 +73,7 @@ public class Orchestrator : MonoBehaviour
 
     public bool WithPackage()
     {
+        if(finishedDay) return false;
         if(currentTask >= 0)
         {
             return DayTasks[currentTask].status == MissionStatus.COLLECTED;

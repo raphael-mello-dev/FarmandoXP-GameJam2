@@ -78,7 +78,9 @@ public class CreateLightning : MonoBehaviour
     {
         Material lightningWarnMaterial = lightningWarn.GetComponent<SpriteRenderer>().material;
         Color lightningWarnMaterialColorStart =  lightningWarnMaterial.GetColor("_Color");
-
+        
+        GameManager.Instance.AudioManager.PlaySFXAtPoint(SFXs.Thunder, lightningWarn.transform);
+        
         yield return new WaitUntil(() => gameObject.activeSelf); // Aguarda até que o objeto esteja ativo
         burstTimer = 0f;
         while (burstTimer < burstTime)
