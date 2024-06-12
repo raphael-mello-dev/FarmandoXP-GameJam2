@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
     public StateMachine GameStateMachine { get; private set; }
     public AudioManager AudioManager { get; private set; }
 
+    public bool IsPaused {  get; set; }
+
     void Awake()
     {
         if (Instance != null && Instance != this)
