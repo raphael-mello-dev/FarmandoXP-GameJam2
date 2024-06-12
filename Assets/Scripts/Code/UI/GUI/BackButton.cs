@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class BackButton : MonoBehaviour
 {
+    [SerializeField] private GameObject OptionsPanel;
+    [SerializeField] private GameObject InstructionsPanel;
+    [SerializeField] private GameObject CreditsPanel;
+
     void Start()
     {
         gameObject.GetComponent<Button>().onClick.AddListener(OnClickBackButton);
@@ -12,6 +16,8 @@ public class BackButton : MonoBehaviour
     void OnClickBackButton()
     {
         GameManager.Instance.AudioManager.PlayMenuSFX(SFXs.ButtonClick);
-        SceneManager.LoadScene(0);
+        InstructionsPanel.SetActive(false);
+        OptionsPanel.SetActive(false);
+        CreditsPanel.SetActive(false);
     }
 }

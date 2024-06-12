@@ -5,11 +5,16 @@ using System.Collections;
 
 public class MenuButtons : MonoBehaviour
 {
+    [Header("Buttons")]
     [SerializeField] private Button playButton;
     [SerializeField] private Button instructionsButton;
     [SerializeField] private Button optionsButton;
     [SerializeField] private Button creditsButton;
-    [SerializeField] private Button exitButton;
+
+    [Header("Panels")]
+    [SerializeField] private GameObject OptionsPanel;
+    [SerializeField] private GameObject InstructionsPanel;
+    [SerializeField] private GameObject CreditsPanel;
 
     void Start()
     {
@@ -17,53 +22,40 @@ public class MenuButtons : MonoBehaviour
         instructionsButton.onClick.AddListener(OnClickInstructionsButton);
         optionsButton.onClick.AddListener(OnClickOptionsButton);
         creditsButton.onClick.AddListener(OnClickCreditsButton);
-        exitButton.onClick.AddListener(OnClickExitButton);
     }
 
     private void OnClickPlayButton()
     {
         OnButtonClick();
-        SceneManager.LoadScene(4);
+
+        if (!GameManager.Instance.IsPaused)
+        {
+            SceneManager.LoadScene(1);
+        }
+
         GameManager.Instance.GameStateMachine.SwitchState<GameplayState>();
     }
 
     private void OnClickInstructionsButton()
     {
         OnButtonClick();
-        SceneManager.LoadScene(1);
+        InstructionsPanel.SetActive(true);
     }
 
     private void OnClickOptionsButton()
     {
         OnButtonClick();
-        SceneManager.LoadScene(2);
+        OptionsPanel.SetActive(true);
     }
 
     private void OnClickCreditsButton()
     {
         OnButtonClick();
-        SceneManager.LoadScene(3);
-    }
-
-    private void OnClickExitButton()
-    {
-        OnButtonClick();
-
-        StartCoroutine(Exit());
-    }
-
-    private IEnumerator Exit()
-    {
-        yield return new WaitForSeconds(1);
-
-        #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-        #endif
-            Application.Quit();
+        CreditsPanel.SetActive(true);
     }
 
     private void OnButtonClick()
     {
         GameManager.Instance.AudioManager.PlayMenuSFX(SFXs.ButtonClick);
-    }
+    } 
 }
