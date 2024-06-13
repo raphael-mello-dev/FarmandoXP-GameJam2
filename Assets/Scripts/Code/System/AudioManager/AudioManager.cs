@@ -34,8 +34,10 @@ public enum SFXs
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] private float thunderMaxDistance;
-    [SerializeField] private List<AudioSource> audioSourceMock;
+    [SerializeField] private List<AudioSource> audioSourceThunderMock;
     [SerializeField] private float audioSourceMockSize = 10f;
+    [Range(0, 1f)][SerializeField] private float thunderMaxVolume = 1f;
+
     private bool flag = false;
 
     [SerializeField] private AudioMixer audioMixer;
@@ -43,13 +45,14 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource sfxAudioSource;
     [SerializeField] private AudioSource menuSFXAudioSource;
     [SerializeField] private AudioSource engineAudioSource;
+    [SerializeField] private AudioSource rainAudioSource;
+    [SerializeField] private AudioSource windAudioSource;
+    [SerializeField] private AudioSource alarmAudioSource;
 
     [SerializeField] private GameObject audioPrefab3D;
 
     [SerializeField] private SoundtrackConfig[] soundtracksConfig;
     [SerializeField] private SFXConfig[] sfxsConfig;
-
-
 
     private Dictionary<MixerGroup, string> mixerGroupDict;
     private Dictionary<Soundtracks, SoundtrackConfig> soundtracksDict;
@@ -96,12 +99,12 @@ public class AudioManager : MonoBehaviour
     {
         for (int i = 0; i < audioSourceMockSize; i++)
         {
-            audioSourceMock.Add(Instantiate(audioPrefab3D).GetComponent<AudioSource>());
+            audioSourceThunderMock.Add(Instantiate(audioPrefab3D).GetComponent<AudioSource>());
         }
     }
     public void DetachAudioSource()
     {
-        audioSourceMock.Clear();
+        audioSourceThunderMock.Clear();
     }
 
     public void SetMixerVolume(MixerGroup group, float normalizedValue)
@@ -151,15 +154,15 @@ public class AudioManager : MonoBehaviour
     public void PlaySFXAtPoint(SFXs type, Transform soundPosition)
     {
         if (player == null) return;
-        AudioSource freeAudioSource = audioSourceMock.Find(go => go.isPlaying == false);
+        AudioSource freeAudioSource = audioSourceThunderMock.Find(go => go.isPlaying == false);
 
         float distance = Vector3.Distance(soundPosition.position, player.transform.position);
         distance = Mathf.Clamp(thunderMaxDistance - Mathf.Abs(distance), 0f, thunderMaxDistance);
-        float volume = distance / thunderMaxDistance;
+        float volume = Mathf.Clamp(distance / thunderMaxDistance, 0f, thunderMaxVolume);
 
         if (freeAudioSource == null)
         {
-            freeAudioSource = audioSourceMock.OrderBy(go => go.volume).FirstOrDefault();
+            freeAudioSource = audioSourceThunderMock.OrderBy(go => go.volume).FirstOrDefault();
         }
         //como coloco o audiosource como 33d, mas que ele nao fique andando pelos lados do fone, apenas para audio?
         if (distance >= thunderMaxDistance) return;
@@ -185,6 +188,39 @@ public class AudioManager : MonoBehaviour
             SFXConfig config = sfxsDict[type];
             menuSFXAudioSource.PlayOneShot(config.audioClip, config.volume);
         }
+    }
+
+    public void PlayRainSFX()
+    {
+        rainAudioSource.loop = true;
+        if (!rainAudioSource.isPlaying) rainAudioSource.Play();
+    }
+
+    public void PlayWindSFX()
+    {
+        rainAudioSource.loop = true;
+        if (!windAudioSource.isPlaying) windAudioSource.Play();
+    }
+
+    public void StopRainSFX()
+    {
+        if (rainAudioSource.isPlaying) rainAudioSource.Stop();
+    }
+
+    public void StopWindSFX()
+    {
+        if (windAudioSource.isPlaying) windAudioSource.Stop();
+    }
+
+    public void PlayAlarmSFX()
+    {
+        alarmAudioSource.loop = true;
+        if (!alarmAudioSource.isPlaying) alarmAudioSource.Play();
+    }
+
+    public void StopAlarmSFX()
+    {
+        if (alarmAudioSource.isPlaying) alarmAudioSource.Stop();
     }
 
     public void SetEnginePitch(float pitch)

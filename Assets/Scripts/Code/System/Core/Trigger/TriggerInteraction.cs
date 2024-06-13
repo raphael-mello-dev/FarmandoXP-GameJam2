@@ -3,4 +3,5 @@
 internal interface TriggerInteraction
 {
      void OnTrigger(GameObject go, Collider collider);
+     void OnTriggerInvert(bool value);
 }

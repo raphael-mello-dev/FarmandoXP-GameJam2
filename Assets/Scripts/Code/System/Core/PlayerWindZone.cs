@@ -10,8 +10,9 @@ public class PlayerWindZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-             playerLocomotion = other.GetComponent<PlayerLocomotion>();
-             playerController = other.GetComponent<CharacterController>();
+            GameManager.Instance.AudioManager.PlayWindSFX();
+            playerLocomotion = other.GetComponent<PlayerLocomotion>();
+            playerController = other.GetComponent<CharacterController>();
         }
     }
 
@@ -19,6 +20,7 @@ public class PlayerWindZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            GameManager.Instance.AudioManager.StopWindSFX();
             if (playerLocomotion != null)
             {
                 playerLocomotion.ExternalMove = Vector3.zero;

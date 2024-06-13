@@ -4,8 +4,13 @@ public class Orchestrator : MonoBehaviour
 {
     [SerializeField] private Delivery[] DayTasks;
     [SerializeField] private Delivery currentTaskView;
+
+    private float points = 0f;
+
     private int currentTask = -1;
     public int CurrentTask { get => currentTask; set => currentTask = value; }
+    public float Points { get => points; set => points = value; }
+
     public bool finishedDay = false;
 
     private void Start()
@@ -23,6 +28,7 @@ public class Orchestrator : MonoBehaviour
             DayTasks[currentTask].collectPoint.OnTrigger -= OnCollectPoint;
             DayTasks[currentTask].receivePoint.OnTrigger -= OnReceivePoint;
             DayTasks[currentTask].package.SetActive(false);
+            Points += DayTasks[currentTask].points;
         }
         currentTask++;
 

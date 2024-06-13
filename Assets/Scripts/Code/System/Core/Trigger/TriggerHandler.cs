@@ -10,7 +10,14 @@ public class TriggerHandler : MonoBehaviour, TriggerInteraction
         glitchSet = FindAnyObjectByType<GlitchSet>();
         playerData = GetComponent<PlayerData>();
     }
+
     public void OnTrigger(GameObject go, Collider collider){
-        glitchSet.AddGlitch(100, 50, 0.5f);
+        glitchSet.AddGlitch(100, 50, 1f);
+        playerData.InvertControl(5f);
+    }
+
+    public void OnTriggerInvert(bool value)
+    {
+        playerData.TriggerInvert = value;
     }
 }

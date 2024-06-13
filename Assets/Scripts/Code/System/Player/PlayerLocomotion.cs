@@ -36,18 +36,24 @@ public class PlayerLocomotion : MonoBehaviour
 
     private CharacterController characterController;
     private PlayerInput playerInput;
+    private PlayerData playerData;
 
     private float currentSpeed = 0f;
     private float yaw = 0f;
-    
+    private float velocityMultiplier = 1f;
+    private bool withAmplifier = false;
+
     //Global direction of Wind
     private Vector3 externalMove;
 
     public float CurrentSpeed { get => currentSpeed; set => currentSpeed = value; }
     public Vector3 ExternalMove { get => externalMove; set => externalMove = value; }
+    public float VelocityMultiplier { get => velocityMultiplier; set => velocityMultiplier = value; }
+    public bool WithAmplifier { get => withAmplifier; set => withAmplifier = value; }
 
     void Start()
     {
+        playerData = GetComponent<PlayerData>();
         playerInput = GetComponent<PlayerInput>();
         characterController = GetComponent<CharacterController>();
         if (characterController == null)
@@ -61,21 +67,24 @@ public class PlayerLocomotion : MonoBehaviour
         if (playerInput.InputData == null || characterController == null) return;
 
         // Applies wind at the input and in the wind direction
-        Vector2 Movement = playerInput.InputData.Movement;
+        Vector2 Movement = playerInput.InputData.Movement * (playerData.CanInvert() ? -1f : 1f);
 
         // Update speed based on acceleration and drag
         if (playerInput.InputData.Acceleration)
             CurrentSpeed += acceleration * Time.deltaTime;
 
-        CurrentSpeed = Mathf.Clamp(CurrentSpeed, 0, maxSpeed);
+        CurrentSpeed = Mathf.Clamp(CurrentSpeed, 0, GetMaxSpeed());
 
-        GameManager.Instance.AudioManager.SetEnginePitch((CurrentSpeed / maxSpeed) * pitchIncrease);
+        GameManager.Instance.AudioManager.SetEnginePitch((CurrentSpeed / GetMaxSpeed()) * pitchIncrease);
 
         if (!playerInput.InputData.Acceleration)
         {
             CurrentSpeed = Mathf.Lerp(CurrentSpeed, 0, drag * Time.deltaTime);
         }
-
+        if(playerData.WithDragAir)
+        {
+            ExternalMove = Vector3.zero;
+        }
         // Calculate movement direction
         Vector3 forwardMovement = transform.forward * CurrentSpeed * Time.deltaTime;
 
@@ -87,7 +96,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         ExternalMove = Vector3.zero; // Reset ExternalMove after applying it
 
-        float speedFactor = CurrentSpeed / maxSpeed;
+        float speedFactor = CurrentSpeed / GetMaxSpeed();
 
         // Update yaw based on horizontal input
         yaw += Movement.x * Time.deltaTime * yawMultiply * speedFactor;
@@ -102,6 +111,6 @@ public class PlayerLocomotion : MonoBehaviour
 
     public float GetMaxSpeed()
     {
-        return maxSpeed;
+        return maxSpeed * VelocityMultiplier;
     }
 }
