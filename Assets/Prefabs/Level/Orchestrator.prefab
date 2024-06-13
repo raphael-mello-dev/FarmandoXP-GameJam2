@@ -49,25 +49,61 @@ MonoBehaviour:
     receivePoint: {fileID: 0}
     package: {fileID: 0}
     status: 0
-    points: 0
+    history:
+      actor: {fileID: -2413806693520163455, guid: a58ffcb95c314fa4d997f2ed4b3d408e, type: 3}
+      name: Maria
+      age: 26
+      hobby: Fotografia
+      strategy: 0
+      points: 200
+      baseTime: 2
+      temperatureReference: 100
+      actorHistory: "Maria fica nervosa com fome e  precisa receber urgentemente
+        seu pacote de comida antes da sua primeira exposi\xE7\xE3o de arte. "
   - collectPoint: {fileID: 0}
     receivePoint: {fileID: 0}
     package: {fileID: 0}
     status: 0
-    points: 0
+    history:
+      actor: {fileID: 7482667652216324306, guid: c7c35537390e2d2409717dcccca6ca99, type: 3}
+      name: Fernanda
+      age: 20
+      hobby: Cantar
+      strategy: 2
+      points: 200
+      baseTime: 2
+      temperatureReference: 60
+      actorHistory: "Fernanda ama cantar, mas \xE9 sens\xEDvel com comida quente,
+        entregue o pacote na temperatura que fernanda gosta. "
   - collectPoint: {fileID: 0}
     receivePoint: {fileID: 0}
     package: {fileID: 0}
     status: 0
-    points: 0
-  - collectPoint: {fileID: 0}
-    receivePoint: {fileID: 0}
-    package: {fileID: 0}
-    status: 0
-    points: 0
+    history:
+      actor: {fileID: -2413806693520163455, guid: a58ffcb95c314fa4d997f2ed4b3d408e, type: 3}
+      name: Ricardo
+      age: 29
+      hobby: Viajar
+      strategy: 1
+      points: 200
+      baseTime: 3
+      temperatureReference: 0
+      actorHistory: "Ricardo est\xE1 chegando de uma viagem, ele pediu sua comida
+        durante o retorno de uma viajem, chegue pr\xF3ximo do tempo estipulado."
   currentTaskView:
     collectPoint: {fileID: 0}
     receivePoint: {fileID: 0}
     package: {fileID: 0}
     status: 0
-    points: 0
+    history:
+      actor: {fileID: 0}
+      name: 
+      age: 0
+      hobby: 
+      strategy: 0
+      points: 0
+      baseTime: 0
+      temperatureReference: 0
+      actorHistory: 
+  menuBinder: {fileID: 11400000, guid: 9af6de0d817255f4f84a2340085e4829, type: 2}
+  finishedDay: 0

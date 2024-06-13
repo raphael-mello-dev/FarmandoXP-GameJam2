@@ -8,7 +8,5 @@ public class Delivery
     public TriggerActor receivePoint;
     public GameObject package;
     public MissionStatus status = MissionStatus.PENDING;
-    public float points;
-    //public string history;
-    //public Sprite client;
+    public DeliveryHistory history;
 }

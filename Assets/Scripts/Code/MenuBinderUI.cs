@@ -14,8 +14,9 @@ public class MenuBinderUI : MonoBehaviour
     [SerializeField] private TMPro.TextMeshProUGUI paused;
     [SerializeField] private TMPro.TextMeshProUGUI powerUp;
     [SerializeField] private TMPro.TextMeshProUGUI points;
+    [SerializeField] private TMPro.TextMeshProUGUI timeDelivery;
 
-    private void Start()
+    private void Awake()
     {
         menuBinder.OnTemperatureChange += ChangeTemperature;
         menuBinder.OnControlChange += ChangeControl;
@@ -59,6 +60,18 @@ public class MenuBinderUI : MonoBehaviour
     {
         if(this.temperature != null)
             this.temperature.text = temperature;
+    }
+
+    private void Update()
+    {
+        timeDelivery.text = $"Timer: <color=green>{SetTime((int)menuBinder.TimeDelivery)}</color>";
+    }
+
+    private string SetTime(int baseTime)
+    {
+        int minutes = baseTime / 60;
+        int seconds = baseTime % 60;
+        return string.Format("{0:D2}:{1:D2}", minutes, seconds);
     }
 
     private void OnDisable()

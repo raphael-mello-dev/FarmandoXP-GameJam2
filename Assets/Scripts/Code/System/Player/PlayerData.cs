@@ -123,6 +123,11 @@ public class PlayerData : MonoBehaviour, IPowerUpActor
         }
     }
 
+    public int GetTemperaturePercent()
+    {
+        return (int)(packageTemperature * 100);
+    }
+
     private void HandlePowerUp()
     {
         if (hasPowerUp)

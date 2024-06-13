@@ -9,14 +9,17 @@ public class MenuBinder : ScriptableObject
     private string battery;
     private string powerUp;
     private string points;
+    private Delivery delivery;
 
     private bool paused;
+    private float timeDelivery;
 
     public event Action<string> OnTemperatureChange;
     public event Action<string> OnControlChange;
     public event Action<string> OnBatteryChange;
     public event Action<string> OnPowerUpChange;
     public event Action<string> OnPointsChange;
+    public event Action<Delivery> OnDeliveryChange;
     public event Action<bool> OnPausedChange;
 
     public string Temperature
@@ -96,4 +99,19 @@ public class MenuBinder : ScriptableObject
             }
         }
     }
+
+    public Delivery Delivery
+    {
+        get => delivery;
+        set
+        {
+            //if (delivery != value)
+            {
+                delivery = value;
+                OnDeliveryChange?.Invoke(delivery);
+            }
+        }
+    }
+
+    public float TimeDelivery { get => timeDelivery; set => timeDelivery = value; }
 }
