@@ -114,7 +114,8 @@ public class Orchestrator : MonoBehaviour
                 PlayerData playerData = FindAnyObjectByType<PlayerData>();
                 int temperature = playerData.GetTemperaturePercent();
                 int temperatureDelivery = delivery.history.temperatureReference;
-                points = Mathf.Clamp01(1 - (Mathf.Abs(temperature - temperatureDelivery) / temperatureDelivery));
+                points = Mathf.Clamp01(1f - (Mathf.Abs(temperature - temperatureDelivery) / (float)temperatureDelivery));
+                Debug.Log(points);
                 break;
         }
         return points;

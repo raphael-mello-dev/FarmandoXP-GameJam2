@@ -51,14 +51,14 @@ MonoBehaviour:
     status: 0
     history:
       actor: {fileID: -2413806693520163455, guid: a58ffcb95c314fa4d997f2ed4b3d408e, type: 3}
-      name: Maria
+      name: "Jos\xE9"
       age: 26
       hobby: Fotografia
       strategy: 0
       points: 200
-      baseTime: 2
+      baseTime: 40
       temperatureReference: 100
-      actorHistory: "Maria fica nervosa com fome e  precisa receber urgentemente
+      actorHistory: "Z\xE9 fica nervoso com fome e  precisa receber urgentemente
         seu pacote de comida antes da sua primeira exposi\xE7\xE3o de arte. "
   - collectPoint: {fileID: 0}
     receivePoint: {fileID: 0}
@@ -106,4 +106,5 @@ MonoBehaviour:
       temperatureReference: 0
       actorHistory: 
   menuBinder: {fileID: 11400000, guid: 9af6de0d817255f4f84a2340085e4829, type: 2}
+  time: 0
   finishedDay: 0

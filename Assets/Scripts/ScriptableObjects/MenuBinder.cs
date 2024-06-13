@@ -27,7 +27,7 @@ public class MenuBinder : ScriptableObject
         get => temperature;
         set
         {
-            if (temperature != value)
+            //if (temperature != value)
             {
                 temperature = value;
                 OnTemperatureChange?.Invoke(temperature);
