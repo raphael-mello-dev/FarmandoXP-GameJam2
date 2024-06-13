@@ -6368,6 +6368,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1524369247270938287, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524369247270938287, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cd231b05da2c41a43a06fc86273dd2a3, type: 3}
+    - target: {fileID: 7617078576036334323, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
+      propertyPath: sfxsConfig.Array.data[5].volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8052461592482731305, guid: c9ee2003603da1d4c9d683cf36910a45, type: 3}
       propertyPath: m_Name
       value: AudioManager

@@ -43,6 +43,7 @@ public class Orchestrator : MonoBehaviour
     {
         if(DayTasks[currentTask].status == MissionStatus.STARTED)
         {
+            GameManager.Instance.AudioManager.PlaySFX(SFXs.Delivery);
             go.SetActive(false);
             DayTasks[currentTask].status = MissionStatus.COLLECTED;
             DayTasks[currentTask].package.SetActive(true);
@@ -53,6 +54,7 @@ public class Orchestrator : MonoBehaviour
     {
         if(DayTasks[currentTask].status == MissionStatus.COLLECTED)
         {
+            GameManager.Instance.AudioManager.PlaySFX(SFXs.Delivery);
             go.SetActive(false);
             NextTask();
         }

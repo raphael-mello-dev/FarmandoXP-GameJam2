@@ -280,6 +280,7 @@ MonoBehaviour:
   foodTemperature: {fileID: 0}
   batteryQuantity: {fileID: 0}
   msQuantity: {fileID: 0}
+  alarmSound: {fileID: 8620032121288459101}
 --- !u!114 &9152472482024745240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -869,12 +870,12 @@ GameObject:
   - component: {fileID: 2752483959829527044}
   - component: {fileID: 8620032121288459101}
   m_Layer: 3
-  m_Name: EngineSound
+  m_Name: BatteryAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2752483959829527044
 Transform:
   m_ObjectHideFlags: 0
@@ -899,13 +900,13 @@ AudioSource:
   m_GameObject: {fileID: 7130576682238992797}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 83bfdcc970d921f4ca7699eb7cf61726, type: 3}
+  OutputAudioMixerGroup: {fileID: -294676425739078590, guid: 9216f96574185c34c8ce2102177bfe44, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 92468893d1517c545a270966a9b1b5c5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.149
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128

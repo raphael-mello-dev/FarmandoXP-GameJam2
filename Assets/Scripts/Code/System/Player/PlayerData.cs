@@ -7,7 +7,7 @@ public class PlayerData : MonoBehaviour
     [SerializeField] private PlayerMetaDataSO playerMetaData = null;
     [SerializeField] private float battery = 1;
     [SerializeField] private float packageTemperature = 1;
-   
+
     private bool withPackage;
     private bool inShadow;
 
@@ -17,6 +17,7 @@ public class PlayerData : MonoBehaviour
     public TMPro.TextMeshProUGUI foodTemperature;
     public TMPro.TextMeshProUGUI batteryQuantity;
     public TMPro.TextMeshProUGUI msQuantity;
+    [SerializeField] private AudioSource alarmSound;
 
     public bool InShadow { get => inShadow; set => inShadow = value; }
     public bool WithPackage { get => withPackage; set => withPackage = value; }
@@ -60,6 +61,16 @@ public class PlayerData : MonoBehaviour
         battery = Mathf.Clamp(battery, 0, 1);
         packageTemperature = Mathf.Clamp(packageTemperature, 0, 1);
        
+        if(battery < 0.3f && alarmSound.mute)
+        {
+            alarmSound.mute = false;
+        }
+
+        if(battery >= 0.3f && !alarmSound.mute)
+        {
+            alarmSound.mute = true;
+        }
+
         Color batteryColor = Color.HSVToRGB(battery * 0.33f, 1f, 1f);
         batteryQuantity.text = "Battery: <color=#" + ColorToHex(batteryColor) + "> " + (int)(battery * 100) + "%</color>";
 
