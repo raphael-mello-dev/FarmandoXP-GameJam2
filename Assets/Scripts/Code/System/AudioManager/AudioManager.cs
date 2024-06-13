@@ -99,7 +99,8 @@ public class AudioManager : MonoBehaviour
     {
         for (int i = 0; i < audioSourceMockSize; i++)
         {
-            audioSourceThunderMock.Add(Instantiate(audioPrefab3D).GetComponent<AudioSource>());
+            AudioSource asource = Instantiate(audioPrefab3D).GetComponent<AudioSource>();
+            audioSourceThunderMock.Add(asource);
         }
     }
     public void DetachAudioSource()
@@ -166,6 +167,9 @@ public class AudioManager : MonoBehaviour
         }
         //como coloco o audiosource como 33d, mas que ele nao fique andando pelos lados do fone, apenas para audio?
         if (distance >= thunderMaxDistance) return;
+        GlitchSet glitchSet = FindAnyObjectByType<GlitchSet>();
+
+        glitchSet.AddGlitch(100 * volume, 50 * volume, 3f * volume);
 
         AudioSource audioSource = freeAudioSource;
         audioSource.transform.position = soundPosition.position;
@@ -237,6 +241,16 @@ public class AudioManager : MonoBehaviour
     public void StopEngine()
     {
         engineAudioSource.Stop();
+    }
+    
+    public void StopAllGameplaySounds()
+    {
+        engineAudioSource.Stop();
+        alarmAudioSource.Stop();
+        windAudioSource.Stop();
+        rainAudioSource.Stop();
+        sfxAudioSource.Stop();
+
     }
 }
 

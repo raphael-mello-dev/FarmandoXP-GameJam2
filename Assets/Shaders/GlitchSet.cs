@@ -23,14 +23,6 @@ public class GlitchSet : MonoBehaviour
         time = duration;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            AddGlitch(100f, 5f, 1f);
-        }
-    }
-
     private void FixedUpdate()
     {
 

@@ -12,7 +12,6 @@ public class TriggerHandler : MonoBehaviour, TriggerInteraction
     }
 
     public void OnTrigger(GameObject go, Collider collider){
-        glitchSet.AddGlitch(100, 50, 1f);
         playerData.InvertControl(5f);
     }
 
