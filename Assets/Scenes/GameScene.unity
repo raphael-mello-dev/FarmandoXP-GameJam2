@@ -5914,12 +5914,12 @@ RectTransform:
   - {fileID: 1207859088}
   - {fileID: 35703094}
   - {fileID: 193341636}
+  - {fileID: 1474703525}
   - {fileID: 1206390947}
   - {fileID: 912847021}
   - {fileID: 852646005}
   - {fileID: 1444236261}
   - {fileID: 215653245}
-  - {fileID: 1474703525}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
