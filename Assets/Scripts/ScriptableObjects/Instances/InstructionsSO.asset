@@ -13,15 +13,24 @@ MonoBehaviour:
   m_Name: InstructionsSO
   m_EditorClassIdentifier: 
   instructionData:
-  - imageInstruction: {fileID: 21300000, guid: c33331786fa9e3e409c81cfcdfa587bd, type: 3}
-    videoInstruction: {fileID: 0}
-    description: Teste1
-  - imageInstruction: {fileID: 21300000, guid: 0c81d5259f1bd3b4d8488fb3a66fb0d9, type: 3}
-    videoInstruction: {fileID: 0}
-    description: Teste2
-  - imageInstruction: {fileID: 21300000, guid: bee580ce6bf2dae4a8fc298ce0a1d05a, type: 3}
-    videoInstruction: {fileID: 0}
-    description: Teste3
   - imageInstruction: {fileID: 0}
-    videoInstruction: {fileID: 32900000, guid: df75c9531052ac742aa3f0b8cc8a93e7, type: 3}
-    description: Teste4
+    videoInstruction: {fileID: 32900000, guid: 19f1bed38d940b544af9cef3528cba96, type: 3}
+    description: "Pressione o bot\xE3o esquerdo do mouse para acelerar"
+  - imageInstruction: {fileID: 0}
+    videoInstruction: {fileID: 32900000, guid: 48b7345a320736347b3cfac821e667dc, type: 3}
+    description: "Pressione os bot\xF5es A e D para movimentar-se"
+  - imageInstruction: {fileID: 0}
+    videoInstruction: {fileID: 32900000, guid: 528cd6305e6bfb24292c6c4d1f961b88, type: 3}
+    description: "Pressione os bot\xF5es W e S para aumentar ou diminuir a altitude"
+  - imageInstruction: {fileID: 0}
+    videoInstruction: {fileID: 32900000, guid: 5054e502621522a489f6a84896edc8d8, type: 3}
+    description: "Exitem correntes de vento, tome cuidado para s\xE3o ser atingido"
+  - imageInstruction: {fileID: 0}
+    videoInstruction: {fileID: 32900000, guid: 221fd5ba110a70d4c991c975ec956a82, type: 3}
+    description: Raios que caem perto do drone causam falha do sinal, fazendo com
+      que os controles se invertam
+  - imageInstruction: {fileID: 0}
+    videoInstruction: {fileID: 32900000, guid: e990279a32959314ab35b017677a7d09, type: 3}
+    description: "Existem tr\xEAs tipos de miss\xF5es, sendo elas:\n<b>Velocidade</b>\nEntregue
+      o mais r\xE1pido poss\xEDvel\n<b>Temperatura</b>\nEntregue o pacote na temperatura
+      desejada\n<b>No tempo</b>\nEntregue o mais pr\xF3ximo do tempo desejado\n"

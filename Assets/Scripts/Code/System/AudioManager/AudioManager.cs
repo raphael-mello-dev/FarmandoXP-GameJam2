@@ -303,13 +303,6 @@ public class AudioManager : MonoBehaviour
         rainAudioSource.Stop();
         sfxAudioSource.Stop();
     }
-    private void Update()
-    {
-        if(currentMusic != null)
-        {
-            Debug.Log(currentMusic.gameObject.name);
-        }
-    }
 }
 
 [Serializable]
