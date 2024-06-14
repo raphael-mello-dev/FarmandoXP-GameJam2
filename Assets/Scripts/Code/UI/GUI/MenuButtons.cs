@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System;
 
 public class MenuButtons : MonoBehaviour
 {
@@ -24,6 +25,14 @@ public class MenuButtons : MonoBehaviour
         creditsButton.onClick.AddListener(OnClickCreditsButton);
     }
 
+    private void OnDestroy()
+    {
+        playButton.onClick.RemoveAllListeners();
+        instructionsButton.onClick.RemoveAllListeners();
+        optionsButton.onClick.RemoveAllListeners();
+        creditsButton.onClick.RemoveAllListeners();
+    }
+
     private void OnClickPlayButton()
     {
         OnButtonClick();
@@ -33,20 +42,32 @@ public class MenuButtons : MonoBehaviour
 
     private void OnClickInstructionsButton()
     {
-        OnButtonClick();
-        InstructionsPanel.SetActive(true);
+        try
+        {
+            OnButtonClick();
+            InstructionsPanel.SetActive(true);
+        }
+        catch (Exception e) { }
     }
 
     private void OnClickOptionsButton()
     {
-        OnButtonClick();
-        OptionsPanel.SetActive(true);
+        try
+        {
+            OnButtonClick();
+            OptionsPanel.SetActive(true);
+        }
+        catch(Exception ex) { }
     }
 
     private void OnClickCreditsButton()
     {
-        OnButtonClick();
-        CreditsPanel.SetActive(true);
+        try
+        {
+            OnButtonClick();
+            CreditsPanel.SetActive(true);
+        }
+        catch(Exception e){}
     }
 
     private void OnButtonClick()

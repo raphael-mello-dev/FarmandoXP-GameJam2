@@ -1,7 +1,4 @@
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,27 +13,23 @@ public class TeamPerson : MonoBehaviour
 
     public bool ActiveColor { get => activeColor; set => activeColor = value; }
 
-    void Start()
-    {
-        
-    }
     private void OnEnable()
     {
         timeElapsed = 0f;
         picture.material.SetFloat("_Value", 0f);
         transform.localScale = Vector3.forward;
-        transform.DOScale(new Vector3(1f, 1f, 1f), timeLocalScale);
+        transform.DOScale(new Vector3(1f, 1f, 1f), timeLocalScale).SetUpdate(true); // Independent update
     }
 
     private void Update()
     {
-        if(ActiveColor)
+        if (ActiveColor)
         {
-            timeElapsed += Time.deltaTime;
+            timeElapsed += Time.unscaledDeltaTime;
         }
         else
         {
-            timeElapsed -= Time.deltaTime;
+            timeElapsed -= Time.unscaledDeltaTime;
         }
 
         timeElapsed = Mathf.Clamp(timeElapsed, 0f, timeColored);
@@ -45,7 +38,6 @@ public class TeamPerson : MonoBehaviour
 
     public void ModifyScale(float scale)
     {
-        transform.DOScale(new Vector3(scale, scale, 1f), timeLocalScale);
+        transform.DOScale(new Vector3(scale, scale, 1f), timeLocalScale).SetUpdate(true); // Independent update
     }
-
 }

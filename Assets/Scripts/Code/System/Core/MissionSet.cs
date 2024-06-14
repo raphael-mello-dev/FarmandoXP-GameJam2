@@ -89,4 +89,12 @@ public class MissionSet : MonoBehaviour
         return string.Format("{0:D2}:{1:D2}", minutes, seconds);
     }
 
+    private void Update()
+    {
+        actor.enabled = !GameManager.Instance.IsPaused;
+        actorInfo.enabled = !GameManager.Instance.IsPaused;
+        missionInfo.enabled = !GameManager.Instance.IsPaused;
+        history.enabled = !GameManager.Instance.IsPaused;
+        missionStatus.enabled = !GameManager.Instance.IsPaused;
+    }
 }
