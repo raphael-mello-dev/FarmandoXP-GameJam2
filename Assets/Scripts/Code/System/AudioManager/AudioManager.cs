@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,10 @@ public class AudioManager : MonoBehaviour
     private bool flag = false;
 
     [SerializeField] private AudioMixer audioMixer;
-    [SerializeField] private AudioSource soundtrackAudioSource;
+    [SerializeField] private AudioSource soundtrackMenuAudioSource;
+    [SerializeField] private AudioSource soundtrackGameplayAudioSource;
+    [SerializeField] private AudioSource soundtrackCreditsAudioSource;
+
     [SerializeField] private AudioSource sfxAudioSource;
     [SerializeField] private AudioSource menuSFXAudioSource;
     [SerializeField] private AudioSource engineAudioSource;
@@ -51,11 +55,14 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private SoundtrackConfig[] soundtracksConfig;
     [SerializeField] private SFXConfig[] sfxsConfig;
+    [SerializeField] private AudioSource currentMusic;
 
     private Dictionary<MixerGroup, string> mixerGroupDict;
     private Dictionary<Soundtracks, SoundtrackConfig> soundtracksDict;
     private Dictionary<SFXs, SFXConfig> sfxsDict;
     private PlayerLocomotion player;
+
+    public AudioSource CurrentMusic { get => currentMusic; set => currentMusic = value; }
 
     void Awake()
     {
@@ -68,6 +75,7 @@ public class AudioManager : MonoBehaviour
 
         soundtracksDict = soundtracksConfig.ToDictionary(config => config.audioType, config => config);
         sfxsDict = sfxsConfig.ToDictionary(config => config.audioType, config => config);
+        CurrentMusic = soundtrackMenuAudioSource;
     }
 
     void Start()
@@ -126,10 +134,43 @@ public class AudioManager : MonoBehaviour
         return volume;
     }
 
-    public void PlayMusic()
+    public void PlayMenuMusic()
     {
-        soundtrackAudioSource.Stop();
-        soundtrackAudioSource.Play();
+        CurrentMusic = soundtrackMenuAudioSource;
+        soundtrackMenuAudioSource.Play();
+    }
+
+    public void StopMenuMusic()
+    {
+        soundtrackMenuAudioSource.Stop();
+    }
+
+    public void PlayCreditMusic()
+    {
+        soundtrackCreditsAudioSource.Play();
+    }
+
+    public void StopCreditMusic()
+    {
+        soundtrackCreditsAudioSource.Stop();
+    }
+
+    public void PlayGameplayMusic()
+    {
+        CurrentMusic = soundtrackGameplayAudioSource;
+        soundtrackGameplayAudioSource.Play();
+    }
+
+    public void StopGameplayMusic()
+    {
+        soundtrackGameplayAudioSource.Stop();
+    }
+
+    public void StopAllMusics()
+    {
+        StopGameplayMusic();
+        StopCreditMusic();
+        StopMenuMusic();
     }
 
     public void PlaySoundtrack(Soundtracks type)
@@ -137,10 +178,10 @@ public class AudioManager : MonoBehaviour
         if (soundtracksDict.ContainsKey(type))
         {
             SoundtrackConfig config = soundtracksDict[type];
-            soundtrackAudioSource.Stop();
-            soundtrackAudioSource.clip = config.audioClip;
-            soundtrackAudioSource.volume = config.volume;
-            soundtrackAudioSource.Play();
+            soundtrackMenuAudioSource.Stop();
+            soundtrackMenuAudioSource.clip = config.audioClip;
+            soundtrackMenuAudioSource.volume = config.volume;
+            soundtrackMenuAudioSource.Play();
         }
     }
 
@@ -254,12 +295,20 @@ public class AudioManager : MonoBehaviour
     
     public void StopAllGameplaySounds()
     {
-        soundtrackAudioSource.Stop();
+
+        soundtrackMenuAudioSource.Stop();
         engineAudioSource.Stop();
         alarmAudioSource.Stop();
         windAudioSource.Stop();
         rainAudioSource.Stop();
         sfxAudioSource.Stop();
+    }
+    private void Update()
+    {
+        if(currentMusic != null)
+        {
+            Debug.Log(currentMusic.gameObject.name);
+        }
     }
 }
 

@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System;
+using DG.Tweening;
 
 public class MenuButtons : MonoBehaviour
 {
@@ -66,12 +67,35 @@ public class MenuButtons : MonoBehaviour
         {
             OnButtonClick();
             CreditsPanel.SetActive(true);
+
+            DOTween.To(() => GameManager.Instance.AudioManager.CurrentMusic.volume,
+                       x => GameManager.Instance.AudioManager.CurrentMusic.volume = x,
+                       0f, 1.5f)
+                   .SetEase(Ease.Linear)
+                   .SetUpdate(true);
+
+            GameManager.Instance.AudioManager.PlayCreditMusic();
         }
-        catch(Exception e){}
+        catch (Exception e)
+        {
+            Debug.Log($"<color=red>An error occurred in OnClickCreditsButton: {e.Message}</color>");
+        }
     }
+
+    public void ResetCreditSound()
+    {
+        DOTween.To(() => GameManager.Instance.AudioManager.CurrentMusic.volume,
+                   x => GameManager.Instance.AudioManager.CurrentMusic.volume = x,
+                   1f, 3f)
+               .SetEase(Ease.Linear)
+               .SetUpdate(true);
+
+        GameManager.Instance.AudioManager.StopCreditMusic();
+    }
+
 
     private void OnButtonClick()
     {
         GameManager.Instance.AudioManager.PlayMenuSFX(SFXs.ButtonClick);
-    } 
+    }
 }

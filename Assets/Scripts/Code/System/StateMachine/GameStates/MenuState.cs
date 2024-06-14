@@ -6,7 +6,8 @@ public class MenuState : BaseState
         try
         {
             GameManager.Instance.AudioManager.StopAllGameplaySounds();
-            GameManager.Instance.AudioManager.PlayMusic();
+            GameManager.Instance.AudioManager.StopAllMusics();
+            GameManager.Instance.AudioManager.PlayMenuMusic();
         }
         catch(Exception e) { //ignored
         
@@ -17,5 +18,7 @@ public class MenuState : BaseState
 
     public override void OnEnd() {
         GameManager.Instance.AudioManager.DetachAudioSource();
+        GameManager.Instance.AudioManager.StopAllMusics();
+        GameManager.Instance.AudioManager.PlayGameplayMusic();
     }
 }

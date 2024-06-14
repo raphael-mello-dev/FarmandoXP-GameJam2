@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 325b4f27de9aae14eb9629823523ddf3, type: 3}
+  m_Name: InstructionsSO
+  m_EditorClassIdentifier: 
+  instructionData:
+  - imageInstruction: {fileID: 21300000, guid: c33331786fa9e3e409c81cfcdfa587bd, type: 3}
+    videoInstruction: {fileID: 0}
+    description: Teste1
+  - imageInstruction: {fileID: 21300000, guid: 0c81d5259f1bd3b4d8488fb3a66fb0d9, type: 3}
+    videoInstruction: {fileID: 0}
+    description: Teste2
+  - imageInstruction: {fileID: 21300000, guid: bee580ce6bf2dae4a8fc298ce0a1d05a, type: 3}
+    videoInstruction: {fileID: 0}
+    description: Teste3
+  - imageInstruction: {fileID: 0}
+    videoInstruction: {fileID: 32900000, guid: df75c9531052ac742aa3f0b8cc8a93e7, type: 3}
+    description: Teste4

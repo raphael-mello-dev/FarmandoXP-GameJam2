@@ -1,7 +1,11 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
-
+/*
+█▀▀ █▀▀█ 　 █▀▀ █▀▀█ █▀▀▄ ░▀░ █▀▀▀ █▀▀█ 　 █▀▀▄ █▀▀ 　 █▀▀█ █░░█ █▀▀█ █░░ ░▀░ █▀▀▄ █▀▀█ █▀▀▄ █▀▀ 
+▀▀█ █░░█ 　 █░░ █░░█ █░░█ ▀█▀ █░▀█ █░░█ 　 █░░█ █▀▀ 　 █░░█ █░░█ █▄▄█ █░░ ▀█▀ █░░█ █▄▄█ █░░█ █▀▀ 
+▀▀▀ ▀▀▀▀ 　 ▀▀▀ ▀▀▀▀ ▀▀▀░ ▀▀▀ ▀▀▀▀ ▀▀▀▀ 　 ▀▀▀░ ▀▀▀ 　 ▀▀▀█ ░▀▀▀ ▀░░▀ ▀▀▀ ▀▀▀ ▀▀▀░ ▀░░▀ ▀▀▀░ ▀▀▀ 
+ */
 public class PlayerData : MonoBehaviour, IPowerUpActor
 {
     [SerializeField] private PlayerMetaDataSO playerMetaData = null;
