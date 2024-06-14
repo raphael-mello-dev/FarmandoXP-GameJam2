@@ -25,20 +25,6 @@ public class MenuButtons : MonoBehaviour
         creditsButton.onClick.AddListener(OnClickCreditsButton);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            GameManager.Instance.GameStateMachine.SwitchState<GameOverState>();
-            SceneManager.LoadScene(2);
-        }
-        else if (Input.GetKeyDown(KeyCode.K))
-        {
-            GameManager.Instance.GameStateMachine.SwitchState<GameWonState>();
-            SceneManager.LoadScene(2);
-        }
-    }
-
     private void OnDestroy()
     {
         playButton.onClick.RemoveAllListeners();

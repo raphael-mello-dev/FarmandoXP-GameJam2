@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class CreateLightning : MonoBehaviour
 {
@@ -91,6 +92,8 @@ public class CreateLightning : MonoBehaviour
                 if(hit.collider.gameObject.TryGetComponent<TriggerHandler>(out TriggerHandler component))
                 {
                     component.OnTrigger(this.gameObject, hit.collider);
+                    GameManager.Instance.GameStateMachine.SwitchState<GameOverState>();
+                    SceneManager.LoadScene(2);
                 }
             }
             burstTimer += Time.deltaTime;

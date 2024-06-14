@@ -19,4 +19,9 @@ public class TriggerHandler : MonoBehaviour, TriggerInteraction
     {
         playerData.TriggerInvert = value;
     }
+
+    public void OnTrigger(float multiplier)
+    {
+        playerData.InvertControl(5f * multiplier);
+    }
 }

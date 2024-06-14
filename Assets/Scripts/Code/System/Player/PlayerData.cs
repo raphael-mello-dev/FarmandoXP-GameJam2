@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerData : MonoBehaviour, IPowerUpActor
 {
@@ -88,6 +89,12 @@ public class PlayerData : MonoBehaviour, IPowerUpActor
         else
         {
             GameManager.Instance.AudioManager.StopAlarmSFX();
+        }
+
+        if(battery  == 0f)
+        {
+            GameManager.Instance.GameStateMachine.SwitchState<GameOverState>();
+            SceneManager.LoadScene(2);
         }
 
         UpdateUI();

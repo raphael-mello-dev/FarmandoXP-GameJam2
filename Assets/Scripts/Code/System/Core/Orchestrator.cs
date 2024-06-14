@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Orchestrator : MonoBehaviour
 {
@@ -30,14 +31,21 @@ public class Orchestrator : MonoBehaviour
             DayTasks[currentTask].collectPoint.OnTrigger -= OnCollectPoint;
             DayTasks[currentTask].receivePoint.OnTrigger -= OnReceivePoint;
             DayTasks[currentTask].package.SetActive(false);
-            Points += (DayTasks[currentTask].history.points * CalculatePoints(DayTasks[currentTask], time));
+            float pointsCalculated = CalculatePoints(DayTasks[currentTask], time);
+            if(pointsCalculated < 0.1f)
+            {
+                GameManager.Instance.GameStateMachine.SwitchState<GameOverState>();
+                SceneManager.LoadScene(2);
+            }
+            Points += (DayTasks[currentTask].history.points * pointsCalculated);
         }
         currentTask++;
 
         if(currentTask >= DayTasks.Length)
         {
             finishedDay = true;
-            Debug.Log("Finished day!");
+            GameManager.Instance.GameStateMachine.SwitchState<GameWonState>();
+            SceneManager.LoadScene(2);
             return;
         }
         currentTaskView = DayTasks[currentTask];

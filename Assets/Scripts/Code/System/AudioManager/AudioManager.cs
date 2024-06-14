@@ -171,6 +171,11 @@ public class AudioManager : MonoBehaviour
 
         glitchSet.AddGlitch(100 * volume, 50 * volume, 3f * volume);
 
+        if (player.gameObject.TryGetComponent<TriggerHandler>(out TriggerHandler component))
+        {
+            component.OnTrigger(volume);
+        }
+
         AudioSource audioSource = freeAudioSource;
         audioSource.transform.position = soundPosition.position;
 
