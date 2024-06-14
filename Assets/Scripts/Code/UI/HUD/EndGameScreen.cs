@@ -8,7 +8,7 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField] private GameObject defeatPanel;
     [SerializeField] private GameObject victoryPanel;
     [SerializeField] private Image timeFeedback;
-    [SerializeField] private float waitTime = 8f;
+    [SerializeField] private float waitTime = 4f;
     void Start()
     {
         if (GameManager.Instance.GameStateMachine.currentStateText == "GameOverState")
@@ -32,7 +32,7 @@ public class NewBehaviourScript : MonoBehaviour
         while (elapsedTime < waitTime)
         {
             timeFeedback.transform.localScale = Vector3.Lerp(initialScale, targetScale, elapsedTime / waitTime);
-            elapsedTime += Time.unscaledDeltaTime;
+            elapsedTime += Time.unscaledDeltaTime * 2;
             yield return null;
         }
 
