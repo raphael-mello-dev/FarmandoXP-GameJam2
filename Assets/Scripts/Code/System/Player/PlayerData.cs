@@ -91,7 +91,7 @@ public class PlayerData : MonoBehaviour, IPowerUpActor
             GameManager.Instance.AudioManager.StopAlarmSFX();
         }
 
-        if(battery  == 0f)
+        if(battery  == 0f || packageTemperature == 0f)
         {
             GameManager.Instance.GameStateMachine.SwitchState<GameOverState>();
             SceneManager.LoadScene(2);
