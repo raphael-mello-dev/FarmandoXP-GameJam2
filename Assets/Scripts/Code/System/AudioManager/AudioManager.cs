@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.Audio;
-using System.Linq;
 using UnityEngine.SceneManagement;
 
 public enum MixerGroup
@@ -126,6 +124,12 @@ public class AudioManager : MonoBehaviour
         }
 
         return volume;
+    }
+
+    public void PlayMusic()
+    {
+        soundtrackAudioSource.Stop();
+        soundtrackAudioSource.Play();
     }
 
     public void PlaySoundtrack(Soundtracks type)
@@ -250,12 +254,12 @@ public class AudioManager : MonoBehaviour
     
     public void StopAllGameplaySounds()
     {
+        soundtrackAudioSource.Stop();
         engineAudioSource.Stop();
         alarmAudioSource.Stop();
         windAudioSource.Stop();
         rainAudioSource.Stop();
         sfxAudioSource.Stop();
-
     }
 }
 

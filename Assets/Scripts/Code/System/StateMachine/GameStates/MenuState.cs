@@ -6,7 +6,9 @@ public class MenuState : BaseState
         try
         {
             GameManager.Instance.AudioManager.StopAllGameplaySounds();
-        }catch(Exception e) { //ignored
+            GameManager.Instance.AudioManager.PlayMusic();
+        }
+        catch(Exception e) { //ignored
         
         }
     }

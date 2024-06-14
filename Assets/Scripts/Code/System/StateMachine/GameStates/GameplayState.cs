@@ -10,11 +10,7 @@ public class GameplayState : BaseState
         this.gameManager.AudioManager.StartEngine();
     }
 
-    public override void OnUpdate()
-    {
-        if (Input.GetKeyDown(KeyCode.M))
-            this.gameManager.GameStateMachine.SwitchState<PausedState>();
-    }
+    public override void OnUpdate() { }
 
     public override void OnEnd() {
         this.gameManager.AudioManager.StopEngine();
