@@ -13,5 +13,6 @@ public class InstructionsData
 {
     public Sprite imageInstruction;
     public VideoClip videoInstruction;
-    [TextArea] public string description;
+    [TextArea] public string description_pt;
+    [TextArea] public string description_en;
 }

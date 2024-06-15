@@ -35,9 +35,9 @@ RectTransform:
   - {fileID: 5424871779940186392}
   m_Father: {fileID: 3312721658434480809}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 156.33334, y: -50}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5193672565023289255
@@ -137,6 +137,7 @@ MonoBehaviour:
   OptionsPanel: {fileID: 0}
   InstructionsPanel: {fileID: 843168853565065673}
   CreditsPanel: {fileID: 0}
+  menuWithMusic: 0
 --- !u!1 &843168853565065673
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,7 +334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3221374528526551963
 RectTransform:
   m_ObjectHideFlags: 0
@@ -695,9 +696,9 @@ RectTransform:
   - {fileID: 4409101193644289569}
   m_Father: {fileID: 3312721658434480809}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 669, y: -50}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4792106158466705054
@@ -810,7 +811,7 @@ RectTransform:
   m_GameObject: {fileID: 2152982239190188360}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.01, y: 1.01, z: 1}
+  m_LocalScale: {x: 0.707, y: 0.707, z: 0.707}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1254110040272722836}
@@ -1196,9 +1197,9 @@ RectTransform:
   - {fileID: 868777340610506526}
   m_Father: {fileID: 3312721658434480809}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 412.6667, y: -50}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4843606520047680643
@@ -1500,6 +1501,7 @@ GameObject:
   - component: {fileID: 5424871779940186392}
   - component: {fileID: 3269833045621091917}
   - component: {fileID: 3516564823246952328}
+  - component: {fileID: 958696993750770826}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1623,6 +1625,23 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &958696993750770826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4719877106602194060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b265d3df26856a043b7bf5d10ec74bde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translatedText: {fileID: 0}
+  config:
+    portugueseText: Voltar
+    englishText: Back
+  staticText: 1
 --- !u!1 &4811460453583260583
 GameObject:
   m_ObjectHideFlags: 0

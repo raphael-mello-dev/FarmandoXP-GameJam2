@@ -9,4 +9,5 @@ public class Delivery
     public GameObject package;
     public MissionStatus status = MissionStatus.PENDING;
     public DeliveryHistory history;
+    
 }

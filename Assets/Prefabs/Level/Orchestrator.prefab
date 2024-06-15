@@ -50,46 +50,77 @@ MonoBehaviour:
     package: {fileID: 0}
     status: 0
     history:
-      actor: {fileID: -2413806693520163455, guid: a58ffcb95c314fa4d997f2ed4b3d408e, type: 3}
+      actor: {fileID: 21300000, guid: c33331786fa9e3e409c81cfcdfa587bd, type: 3}
       name: "Jos\xE9"
+      name_en: "Jos\xE9"
       age: 26
       hobby: Fotografia
+      hobby_en: Photograph
       strategy: 0
       points: 200
       baseTime: 40
       temperatureReference: 100
       actorHistory: "Z\xE9 fica nervoso com fome e  precisa receber urgentemente
         seu pacote de comida antes da sua primeira exposi\xE7\xE3o de arte. "
+      actorHistory_en: "Z\xE9 is nervous when gets hungry and urgently needs to receive
+        his food package before his first art exhibition."
   - collectPoint: {fileID: 0}
     receivePoint: {fileID: 0}
     package: {fileID: 0}
     status: 0
     history:
-      actor: {fileID: 7482667652216324306, guid: c7c35537390e2d2409717dcccca6ca99, type: 3}
+      actor: {fileID: 21300000, guid: bee580ce6bf2dae4a8fc298ce0a1d05a, type: 3}
       name: Fernanda
+      name_en: Fernanda
       age: 20
       hobby: Cantar
+      hobby_en: Sing
       strategy: 2
       points: 200
-      baseTime: 2
+      baseTime: 0
       temperatureReference: 60
       actorHistory: "Fernanda ama cantar, mas \xE9 sens\xEDvel com comida quente,
         entregue o pacote na temperatura que fernanda gosta. "
+      actorHistory_en: Fernanda loves to sing, but is sensitive to high temperature
+        food, deliver the package at the temperature Fernanda likes.
   - collectPoint: {fileID: 0}
     receivePoint: {fileID: 0}
     package: {fileID: 0}
     status: 0
     history:
-      actor: {fileID: -2413806693520163455, guid: a58ffcb95c314fa4d997f2ed4b3d408e, type: 3}
-      name: Ricardo
-      age: 29
+      actor: {fileID: 21300000, guid: 0c81d5259f1bd3b4d8488fb3a66fb0d9, type: 3}
+      name: Maria
+      name_en: Maria
+      age: 60
       hobby: Viajar
+      hobby_en: Travel
       strategy: 1
       points: 200
-      baseTime: 3
+      baseTime: 20
       temperatureReference: 0
-      actorHistory: "Ricardo est\xE1 chegando de uma viagem, ele pediu sua comida
-        durante o retorno de uma viajem, chegue pr\xF3ximo do tempo estipulado."
+      actorHistory: "Maria est\xE1 chegando de uma viagem, ela pediu sua comida durante
+        seu retorno. Entregue pr\xF3ximo do tempo estipulado."
+      actorHistory_en: Maria is arriving from a trip, she ordered her food during
+        her return. Delivered close to the stipulated time.
+  - collectPoint: {fileID: 0}
+    receivePoint: {fileID: 0}
+    package: {fileID: 0}
+    status: 0
+    history:
+      actor: {fileID: 21300000, guid: 5b0f757febc60ef438ccf9998167c4fb, type: 3}
+      name: Helena
+      name_en: Helena
+      age: 12
+      hobby: Jogar Roblox
+      hobby_en: Play Roblox
+      strategy: 0
+      points: 200
+      baseTime: 10
+      temperatureReference: 0
+      actorHistory: "Helena est\xE1 comemorando seu anivers\xE1rio, mas os salgadinhos
+        acabaram! traga salgadinhos para a festa de Helena o mais r\xE1pido poss\xEDvel!"
+      actorHistory_en: Helena is celebrating her birthday, but she's out of snacks!
+        Bring some snacks to Helena's party as soon as possible!
   currentTaskView:
     collectPoint: {fileID: 0}
     receivePoint: {fileID: 0}
@@ -98,13 +129,16 @@ MonoBehaviour:
     history:
       actor: {fileID: 0}
       name: 
+      name_en: 
       age: 0
       hobby: 
+      hobby_en: 
       strategy: 0
       points: 0
       baseTime: 0
       temperatureReference: 0
       actorHistory: 
+      actorHistory_en: 
   menuBinder: {fileID: 11400000, guid: 9af6de0d817255f4f84a2340085e4829, type: 2}
   time: 0
   finishedDay: 0

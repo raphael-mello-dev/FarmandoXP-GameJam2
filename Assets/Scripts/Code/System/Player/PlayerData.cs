@@ -109,16 +109,16 @@ public class PlayerData : MonoBehaviour, IPowerUpActor
     private void UpdateUI()
     {
         Color batteryColor = Color.HSVToRGB(battery * 0.33f, 1f, 1f);
-        menuBinder.Battery = $"Battery: <color=#{ColorToHex(batteryColor)}> {(int)(battery * 100)}%</color>";
+        menuBinder.Battery = $"{GameManager.Instance.Translate("Bateria")}: <color=#{ColorToHex(batteryColor)}> {(int)(battery * 100)}%</color>";
 
         Color tempColor = Color.HSVToRGB(0.5f - packageTemperature * 0.5f, 1f, 1f);
         menuBinder.Temperature = $"Temp: <color=#{ColorToHex(tempColor)}> {(int)(packageTemperature * 100)}%</color>";
 
-        string controlText = (IsInverted || TriggerInvert) && !WithAmplifier ? "Inverted" : "Good";
+        string controlText = (IsInverted || TriggerInvert) && !WithAmplifier ? $"{GameManager.Instance.Translate("Invertido")}" : $"{GameManager.Instance.Translate("Bom")}";
         Color controlColor = (IsInverted || TriggerInvert) && !WithAmplifier ? Color.HSVToRGB(0f, 1f, 1f) : Color.HSVToRGB(0.33f, 1f, 1f);
-        menuBinder.Control = $"Control: <color=#{ColorToHex(controlColor)}> {controlText}</color>";
+        menuBinder.Control = $"{GameManager.Instance.Translate("Sinal")}: <color=#{ColorToHex(controlColor)}> {controlText}</color>";
         menuBinder.Paused = GameManager.Instance.IsPaused;
-        menuBinder.Points = $"Points: <color=yellow> {(int)orchestrator.Points}</color>";
+        menuBinder.Points = $"{GameManager.Instance.Translate("Pontos")}: <color=yellow> {(int)orchestrator.Points}</color>";
     }
 
     private void HandleControlInversion()
@@ -159,15 +159,15 @@ public class PlayerData : MonoBehaviour, IPowerUpActor
             case PoweUPType.VELOCITY:
                 playerLocomotion.VelocityMultiplier = 1f;
                 WithVelocityMultiplier = false;
-                menuBinder.PowerUP = $"PowerUp: <color=#{ColorToHex(Color.HSVToRGB(0f, 1f, 1f))}> None</color>";
+                menuBinder.PowerUP = $"{GameManager.Instance.Translate("Poder")}: <color=#{ColorToHex(Color.HSVToRGB(0f, 1f, 1f))}> {GameManager.Instance.Translate("Nenhum")}</color>";
                 break;
             case PoweUPType.AMPLIFIER:
                 WithAmplifier = false;
-                menuBinder.PowerUP = $"PowerUp: <color=#{ColorToHex(Color.HSVToRGB(0f, 1f, 1f))}> None</color>";
+                menuBinder.PowerUP = $"{GameManager.Instance.Translate("Poder")}: <color=#{ColorToHex(Color.HSVToRGB(0f, 1f, 1f))}> {GameManager.Instance.Translate("Nenhum")}</color>";
                 break;
             case PoweUPType.DRAG_AIR:
                 WithDragAir = false;
-                menuBinder.PowerUP = $"PowerUp: <color=#{ColorToHex(Color.HSVToRGB(0f, 1f, 1f))}> None</color>";
+                menuBinder.PowerUP = $"{GameManager.Instance.Translate("Poder")}: <color=#{ColorToHex(Color.HSVToRGB(0f, 1f, 1f))}> {GameManager.Instance.Translate("Nenhum")}</color>";
                 break;
         }
     }
@@ -203,18 +203,18 @@ public class PlayerData : MonoBehaviour, IPowerUpActor
             case PoweUPType.VELOCITY:
                 playerLocomotion.VelocityMultiplier = currentPowerUpData.velocityMultiplier;
                 WithVelocityMultiplier = true;
-                menuBinder.PowerUP = $"PowerUp: <color=#{ColorToHex(Color.HSVToRGB(.33f, 1f, 1f))}> Velocity</color>";
+                menuBinder.PowerUP = $"{GameManager.Instance.Translate("Poder")}: <color=#{ColorToHex(Color.HSVToRGB(.33f, 1f, 1f))}> {GameManager.Instance.Translate("Velocidade")}</color>";
                 break;
             case PoweUPType.TEMPERATURE:
                 packageTemperature = Mathf.Clamp01(packageTemperature + currentPowerUpData.temperatureIncrease/100f);
-                menuBinder.PowerUP = $"PowerUp: <color=#{ColorToHex(Color.HSVToRGB(.33f, 1f, 1f))}> Temperature</color>";
+                menuBinder.PowerUP = $"{GameManager.Instance.Translate("Poder")}: <color=#{ColorToHex(Color.HSVToRGB(.33f, 1f, 1f))}> {GameManager.Instance.Translate("Temperatura")}</color>";
                 break;
             case PoweUPType.AMPLIFIER:
                 WithAmplifier = true;
-                menuBinder.PowerUP = $"PowerUp: <color=#{ColorToHex(Color.HSVToRGB(.33f, 1f, 1f))}> Amplifier</color>";
+                menuBinder.PowerUP = $"{GameManager.Instance.Translate("Poder")}: <color=#{ColorToHex(Color.HSVToRGB(.33f, 1f, 1f))}> {GameManager.Instance.Translate("Amplificador")}</color>";
                 break;
             case PoweUPType.DRAG_AIR:
-                menuBinder.PowerUP = $"PowerUp: <color=#{ColorToHex(Color.HSVToRGB(.33f, 1f, 1f))}> Air Drag</color>";
+                menuBinder.PowerUP = $"{GameManager.Instance.Translate("Poder")}: <color=#{ColorToHex(Color.HSVToRGB(.33f, 1f, 1f))}> {GameManager.Instance.Translate("Arrasto")}</color>";
                 WithDragAir = true;
                 break;
         }

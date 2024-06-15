@@ -22,6 +22,7 @@ public class TriggerHandler : MonoBehaviour, TriggerInteraction
 
     public void OnTrigger(float multiplier)
     {
+        if (multiplier < 0.2f) return;
         playerData.InvertControl(5f * multiplier);
     }
 }

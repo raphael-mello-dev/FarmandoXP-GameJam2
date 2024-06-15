@@ -15,22 +15,35 @@ MonoBehaviour:
   instructionData:
   - imageInstruction: {fileID: 0}
     videoInstruction: {fileID: 32900000, guid: 19f1bed38d940b544af9cef3528cba96, type: 3}
-    description: "Pressione o bot\xE3o esquerdo do mouse para acelerar"
+    description_pt: "Pressione o bot\xE3o esquerdo do mouse para acelerar\r"
+    description_en: "Press the left button of the mouse to speed up\r"
   - imageInstruction: {fileID: 0}
     videoInstruction: {fileID: 32900000, guid: 48b7345a320736347b3cfac821e667dc, type: 3}
-    description: "Pressione os bot\xF5es A e D para movimentar-se"
+    description_pt: "Pressione as teclas A e D para movimentar-se\r"
+    description_en: "Press the A and D keys to move\r"
   - imageInstruction: {fileID: 0}
     videoInstruction: {fileID: 32900000, guid: 528cd6305e6bfb24292c6c4d1f961b88, type: 3}
-    description: "Pressione os bot\xF5es W e S para aumentar ou diminuir a altitude"
+    description_pt: "Pressione as teclas W e S para aumentar ou diminuir a altitude\r"
+    description_en: "Press the W and S keys to increase or decrease altitude\r"
   - imageInstruction: {fileID: 0}
     videoInstruction: {fileID: 32900000, guid: 5054e502621522a489f6a84896edc8d8, type: 3}
-    description: "Exitem correntes de vento, tome cuidado para s\xE3o ser atingido"
+    description_pt: "Exitem correntes de vento, tome cuidado para s\xE3o ser atingido"
+    description_en: There are wind currents, be careful to not be hit
   - imageInstruction: {fileID: 0}
     videoInstruction: {fileID: 32900000, guid: 221fd5ba110a70d4c991c975ec956a82, type: 3}
-    description: Raios que caem perto do drone causam falha do sinal, fazendo com
-      que os controles se invertam
+    description_pt: Raios que caem perto do drone causam falha do sinal, fazendo
+      com que os controles se invertam
+    description_en: Lightning striking near the drone causes signal failure, causing
+      the controls to reverse
   - imageInstruction: {fileID: 0}
     videoInstruction: {fileID: 32900000, guid: e990279a32959314ab35b017677a7d09, type: 3}
-    description: "Existem tr\xEAs tipos de miss\xF5es, sendo elas:\n<b>Velocidade</b>\nEntregue
-      o mais r\xE1pido poss\xEDvel\n<b>Temperatura</b>\nEntregue o pacote na temperatura
-      desejada\n<b>No tempo</b>\nEntregue o mais pr\xF3ximo do tempo desejado\n"
+    description_pt: "There are three types of missions, which are:\n<b>Speed</b>
+      :\nDeliver as quickly as possible\n<b>Temperature</b> :\nDeliver the package
+      at the desired temperature\n<b>In time</b> : \nDeliver as close to the desired
+      time as possible\n<b>Observa\xE7\xE3o</b>\nDurante as miss\xF5es, o status
+      PENDENTE n\xE3o atrapalha a contagem de pontua\xE7\xE3o"
+    description_en: "There are three types of missions, which are:\r\n<b>Speed</b>
+      :\r\nDeliver as quickly as possible\r\n<b>Temperature</b> :\r\nDeliver the
+      package at the desired temperature\r\n<b>In time</b> : \r\nDeliver as close
+      to the desired time as possible\n<b>Observation</b>\nDuring missions, the PENDING
+      status does not affect score counting"

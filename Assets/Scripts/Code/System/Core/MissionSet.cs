@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEditor.Experimental.GraphView;
 
 public class MissionSet : MonoBehaviour
 {
@@ -38,9 +39,9 @@ public class MissionSet : MonoBehaviour
                        .OnComplete(() =>{
                            
                            actor.sprite = delivery.history.actor;
-                           actorInfo.text = $"Nome: {delivery.history.name}\n\nIdade: {delivery.history.age}\n\nPassatempo: {delivery.history.hobby}";
+                           actorInfo.text = $"{GameManager.Instance.Translate("Nome")}: {delivery.history.GetName()}\n\n{GameManager.Instance.Translate("Idade")}: {delivery.history.age}\n\n{GameManager.Instance.Translate("Passatempo")}: {delivery.history.GetHobby()}";
                            missionInfo.text = GetStrategyMissionInfo(delivery);
-                           history.text = $"Historia\n\n{delivery.history.actorHistory}";
+                           history.text = $"{GameManager.Instance.Translate("Historia")}\n\n{delivery.history.GetActorHistory()}";
                            missionStatus.text = $"{GetStatus(delivery.status)}";
 
                            DOTween.To(() => rt.anchoredPosition, x => rt.anchoredPosition = x, Vector2.zero, 1f).SetEase(Ease.Linear);
@@ -59,11 +60,11 @@ public class MissionSet : MonoBehaviour
         switch (status)
         {
             case MissionStatus.COLLECTED:
-                return "<color=green>Iniciada</color>";
+                return $"<color=green>{GameManager.Instance.Translate("Iniciada")}</color>";
             case MissionStatus.FINISHED:
-                return "<color=green>Finalizada</color>";
+                return $"<color=green>{GameManager.Instance.Translate("Finalizada")}</color>";
             default:
-                return "<color=red>Pendente</color>";
+                return $"<color=red>{GameManager.Instance.Translate("Pendente")}</color>";
         }
     }
 
@@ -72,11 +73,11 @@ public class MissionSet : MonoBehaviour
         switch(delivery.history.strategy)
         {
             case DeliveryStrategy.VELOCITY:
-                return $"Estrategia: Velocidade\nTempo Base: {SetTime(delivery.history.baseTime)}\nPontos: {delivery.history.points}";
+                return $"{GameManager.Instance.Translate("Estrategia")}: {GameManager.Instance.Translate("Velocidade")}\n{GameManager.Instance.Translate("Tempo Base")}: {SetTime(delivery.history.baseTime)}\n{GameManager.Instance.Translate("Pontos")}: {delivery.history.points}";
             case DeliveryStrategy.INTIME:
-                return $"Estrategia: No Tempo\nTempo Base: {SetTime(delivery.history.baseTime)}\nPontos: {delivery.history.points}";
+                return $"{GameManager.Instance.Translate("Estrategia")}: {GameManager.Instance.Translate("No Tempo")}\n{GameManager.Instance.Translate("Tempo Base")}: {SetTime(delivery.history.baseTime)}\n{GameManager.Instance.Translate("Pontos")}: {delivery.history.points}";
             case DeliveryStrategy.TEMPERATURE:
-                return $"Estrategia: Temperatura\nTemperatura Base: {delivery.history.temperatureReference} %\nPontos: {delivery.history.points}";
+                return $"{GameManager.Instance.Translate("Estrategia")}: {GameManager.Instance.Translate("Temperatura")}\n{GameManager.Instance.Translate("Temperatura Base")}: {delivery.history.temperatureReference} %\n{GameManager.Instance.Translate("Pontos")}: {delivery.history.points}";
             default:
                 return "Livre";
         }

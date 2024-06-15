@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -54,7 +55,6 @@ public class InstructionManager : MonoBehaviour
         if (currentInstruction.imageInstruction != null)
         {
             imageInstruction.sprite = currentInstruction.imageInstruction;
-            description.text = currentInstruction.description;
             imageInstruction.gameObject.SetActive(true);
             instructionsVideo.gameObject.SetActive(false);
             videoPlayer.Stop();
@@ -62,10 +62,11 @@ public class InstructionManager : MonoBehaviour
         else if (currentInstruction.videoInstruction != null)
         {
             videoPlayer.clip = currentInstruction.videoInstruction;
-            description.text = currentInstruction.description;
             imageInstruction.gameObject.SetActive(false);
             instructionsVideo.gameObject.SetActive(true);
             videoPlayer.Play();
         }
+        description.text = GameManager.Instance.selectedLanguage == Languagues.Portuguese ? currentInstruction.description_pt : currentInstruction.description_en;
+
     }
 }

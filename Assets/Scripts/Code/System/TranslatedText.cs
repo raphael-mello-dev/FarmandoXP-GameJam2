@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -8,14 +6,18 @@ public class TranslatedText : MonoBehaviour
     [SerializeField] private TextMeshProUGUI translatedText;
 
     [SerializeField] private LanguagueConfig config = new LanguagueConfig();
-
-    void OnEnable()
+    [SerializeField] private bool staticText = true;
+    private void OnEnable()
     {
+        translatedText = GetComponent<TextMeshProUGUI>();
+        if (!staticText) return;
         TransaleText();
     }
 
     private void TransaleText()
     {
+        if (!staticText) return;
+
         if (GameManager.Instance.selectedLanguage == Languagues.Portuguese)
             translatedText.text = config.portugueseText;
         else if (GameManager.Instance.selectedLanguage == Languagues.English)

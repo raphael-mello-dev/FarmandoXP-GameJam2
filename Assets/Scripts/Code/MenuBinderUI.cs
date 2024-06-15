@@ -34,14 +34,13 @@ public class MenuBinderUI : MonoBehaviour
 
     private void ChangePowerUp(string powerUp)
     {
-        if(this.powerUp != null)
-            this.powerUp.text = powerUp;
+        this.powerUp.text = powerUp;
     }
 
     private void ChangePaused(bool paused)
     {
-        if(this.paused != null)
-            this.paused.text = paused ? "stop" : "live";
+        //if(this.paused != null)
+        //    this.paused.text = paused ? $"{GameManager.Instance.Translate("Pause")}" : $"{GameManager.Instance.Translate("Ao vivo")}";
     }
 
     private void ChangeBattery(string battery)
@@ -64,7 +63,7 @@ public class MenuBinderUI : MonoBehaviour
 
     private void Update()
     {
-        timeDelivery.text = $"Timer: <color=green>{SetTime((int)menuBinder.TimeDelivery)}</color>";
+        timeDelivery.text = $"{GameManager.Instance.Translate("Cronometro")}: <color=green>{SetTime((int)menuBinder.TimeDelivery)}</color>";
     }
 
     private string SetTime(int baseTime)

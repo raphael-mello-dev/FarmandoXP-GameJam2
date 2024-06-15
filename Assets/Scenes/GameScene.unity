@@ -161,7 +161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3507105490368992194, guid: 76a619df583efde43806bd374092dea4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 337.7956
+      value: 486.131
       objectReference: {fileID: 0}
     - target: {fileID: 3507105490368992194, guid: 76a619df583efde43806bd374092dea4, type: 3}
       propertyPath: m_SizeDelta.y
@@ -217,7 +217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4919637034918479571, guid: 76a619df583efde43806bd374092dea4, type: 3}
       propertyPath: m_text
-      value: 'Timer: <color=green>00:00</color>'
+      value: "Cron\xF4metro: <color=green>00:00</color>"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -709,7 +709,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8418886636691430737, guid: dc0b19e909165884caf783a4f0a2b54e, type: 3}
   m_PrefabInstance: {fileID: 8334104105618365338}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8334104105618365339}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -815,13 +815,11 @@ PrefabInstance:
       propertyPath: InstructionsPanel
       value: 
       objectReference: {fileID: 1518253998}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2178774874551641615, guid: c7b4ac27abb6be34da9c7bf61892c0b6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6432597469717385588, guid: c7b4ac27abb6be34da9c7bf61892c0b6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 206256798}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7b4ac27abb6be34da9c7bf61892c0b6, type: 3}
 --- !u!224 &206256794 stripped
 RectTransform:
@@ -833,38 +831,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1151690563513024200, guid: c7b4ac27abb6be34da9c7bf61892c0b6, type: 3}
   m_PrefabInstance: {fileID: 206256793}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &206256796 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6432597469717385588, guid: c7b4ac27abb6be34da9c7bf61892c0b6, type: 3}
-  m_PrefabInstance: {fileID: 206256793}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &206256797 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9012990977799420853, guid: c7b4ac27abb6be34da9c7bf61892c0b6, type: 3}
-  m_PrefabInstance: {fileID: 206256793}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206256796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &206256798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206256796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b265d3df26856a043b7bf5d10ec74bde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  translatedText: {fileID: 206256797}
-  config:
-    portugueseText: Voltar
-    englishText: Back
 --- !u!1 &215653244
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,10 +959,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4634677115335611121, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
-      propertyPath: DayTasks.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4634677115335611121, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
       propertyPath: DayTasks.Array.data[0].package
       value: 
       objectReference: {fileID: 1224528631}
@@ -1012,14 +974,6 @@ PrefabInstance:
       propertyPath: DayTasks.Array.data[3].package
       value: 
       objectReference: {fileID: 1224528631}
-    - target: {fileID: 4634677115335611121, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
-      propertyPath: DayTasks.Array.data[2].history.age
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 4634677115335611121, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
-      propertyPath: DayTasks.Array.data[3].history.age
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 4634677115335611121, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
       propertyPath: DayTasks.Array.data[0].collectPoint
       value: 
@@ -1041,10 +995,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1663549573}
     - target: {fileID: 4634677115335611121, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
-      propertyPath: DayTasks.Array.data[2].history.name
-      value: Maria
-      objectReference: {fileID: 0}
-    - target: {fileID: 4634677115335611121, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
       propertyPath: DayTasks.Array.data[2].receivePoint
       value: 
       objectReference: {fileID: 1409465701}
@@ -1053,63 +1003,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 620069907}
     - target: {fileID: 4634677115335611121, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
-      propertyPath: DayTasks.Array.data[3].history.name
-      value: Helena
-      objectReference: {fileID: 0}
-    - target: {fileID: 4634677115335611121, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
       propertyPath: DayTasks.Array.data[3].receivePoint
       value: 
       objectReference: {fileID: 482455999}
-    - target: {fileID: 4634677115335611121, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
-      propertyPath: DayTasks.Array.data[0].history.actor
-      value: 
-      objectReference: {fileID: 21300000, guid: c33331786fa9e3e409c81cfcdfa587bd, type: 3}
-    - target: {fileID: 4634677115335611121, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
-      propertyPath: DayTasks.Array.data[1].history.actor
-      value: 
-      objectReference: {fileID: 21300000, guid: bee580ce6bf2dae4a8fc298ce0a1d05a, type: 3}
-    - target: {fileID: 4634677115335611121, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
-      propertyPath: DayTasks.Array.data[2].history.actor
-      value: 
-      objectReference: {fileID: 21300000, guid: 0c81d5259f1bd3b4d8488fb3a66fb0d9, type: 3}
-    - target: {fileID: 4634677115335611121, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
-      propertyPath: DayTasks.Array.data[3].history.actor
-      value: 
-      objectReference: {fileID: 21300000, guid: 5b0f757febc60ef438ccf9998167c4fb, type: 3}
-    - target: {fileID: 4634677115335611121, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
-      propertyPath: DayTasks.Array.data[3].history.hobby
-      value: Jogar Roblox
-      objectReference: {fileID: 0}
-    - target: {fileID: 4634677115335611121, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
-      propertyPath: DayTasks.Array.data[3].history.points
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 4634677115335611121, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
-      propertyPath: DayTasks.Array.data[1].history.baseTime
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4634677115335611121, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
-      propertyPath: DayTasks.Array.data[2].history.baseTime
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4634677115335611121, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
-      propertyPath: DayTasks.Array.data[3].history.baseTime
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4634677115335611121, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
-      propertyPath: DayTasks.Array.data[3].history.strategy
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4634677115335611121, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
-      propertyPath: DayTasks.Array.data[2].history.actorHistory
-      value: "Maria est\xE1 chegando de uma viagem, ela pediu sua comida durante
-        o retorno de uma viajem, chegue pr\xF3ximo do tempo estipulado."
-      objectReference: {fileID: 0}
-    - target: {fileID: 4634677115335611121, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
-      propertyPath: DayTasks.Array.data[3].history.actorHistory
-      value: "Helena est\xE1 comemorando seu anivers\xE1rio, mas os salgadinhos acabaram!
-        traga salgadinhos para a festa de Helena o mais r\xE1pido poss\xEDvel!"
-      objectReference: {fileID: 0}
     - target: {fileID: 4716601984299387900, guid: 48c844224e74b1f43a5ad2d7126bf867, type: 3}
       propertyPath: m_Name
       value: Orchestrator
@@ -1431,6 +1327,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlitchSet
       objectReference: {fileID: 0}
+    - target: {fileID: 433373899131916508, guid: 773c868dbb712df4480f4185c40515bd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5450344134961418164, guid: 773c868dbb712df4480f4185c40515bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1473,7 +1373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8063056651123512844, guid: 773c868dbb712df4480f4185c40515bd, type: 3}
       propertyPath: scanLinesStretch
-      value: 0.75
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2732,6 +2632,11 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &887707076 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8039786360550929777, guid: b2aacc2f6d800044eba16a741d30b30e, type: 3}
+  m_PrefabInstance: {fileID: 8012745857582807584}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &911755032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3513,12 +3418,29 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5736950879601894246, guid: b2aacc2f6d800044eba16a741d30b30e, type: 3}
   m_PrefabInstance: {fileID: 8012745857582807584}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 887707076}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1171408942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887707076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b265d3df26856a043b7bf5d10ec74bde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translatedText: {fileID: 0}
+  config:
+    portugueseText: Ao Vivo
+    englishText: Live
+  staticText: 1
 --- !u!1 &1206390946
 GameObject:
   m_ObjectHideFlags: 0
@@ -4269,14 +4191,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1748514439504719397, guid: 0f19e93db342a8d48bf3ef59a770f969, type: 3}
-      propertyPath: config.englishText
-      value: Back
-      objectReference: {fileID: 0}
-    - target: {fileID: 1748514439504719397, guid: 0f19e93db342a8d48bf3ef59a770f969, type: 3}
-      propertyPath: config.portugueseText
-      value: Voltar
-      objectReference: {fileID: 0}
     - target: {fileID: 5008128672080787759, guid: 0f19e93db342a8d48bf3ef59a770f969, type: 3}
       propertyPath: CreditsPanel
       value: 
@@ -4292,10 +4206,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5646071548479264534, guid: 0f19e93db342a8d48bf3ef59a770f969, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1377614058}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f19e93db342a8d48bf3ef59a770f969, type: 3}
 --- !u!1 &1377614054 stripped
 GameObject:
@@ -4307,38 +4218,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1147350145928598483, guid: 0f19e93db342a8d48bf3ef59a770f969, type: 3}
   m_PrefabInstance: {fileID: 1377614053}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1377614056 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5646071548479264534, guid: 0f19e93db342a8d48bf3ef59a770f969, type: 3}
-  m_PrefabInstance: {fileID: 1377614053}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1377614057 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7348131525605493494, guid: 0f19e93db342a8d48bf3ef59a770f969, type: 3}
-  m_PrefabInstance: {fileID: 1377614053}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1377614056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1377614058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1377614056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b265d3df26856a043b7bf5d10ec74bde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  translatedText: {fileID: 1377614057}
-  config:
-    portugueseText: "Configura\xE7\xF5es"
-    englishText: Settings
 --- !u!1 &1388613982
 GameObject:
   m_ObjectHideFlags: 0
@@ -7010,8 +6889,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2353432833938684788, guid: 13d7d153eea30fd48be5d6614bc859c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1393548474004623312}
   m_SourcePrefab: {fileID: 100100000, guid: 13d7d153eea30fd48be5d6614bc859c6, type: 3}
+--- !u!1 &1393548474004623311 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2353432833938684788, guid: 13d7d153eea30fd48be5d6614bc859c6, type: 3}
+  m_PrefabInstance: {fileID: 1393548474004623310}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1393548474004623312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393548474004623311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b265d3df26856a043b7bf5d10ec74bde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translatedText: {fileID: 0}
+  config:
+    portugueseText: <color=red> Entrega</color>
+    englishText: <color=red> Delivery</color>
+  staticText: 1
 --- !u!1001 &1611652343417897845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7577,7 +7481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3175666730058731253, guid: b2aacc2f6d800044eba16a741d30b30e, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 126.3176
+      value: 187.7431
       objectReference: {fileID: 0}
     - target: {fileID: 3175666730058731253, guid: b2aacc2f6d800044eba16a741d30b30e, type: 3}
       propertyPath: m_SizeDelta.y
@@ -7631,6 +7535,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5736950879601894246, guid: b2aacc2f6d800044eba16a741d30b30e, type: 3}
+      propertyPath: m_text
+      value: Ao vivo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736950879601894246, guid: b2aacc2f6d800044eba16a741d30b30e, type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736950879601894246, guid: b2aacc2f6d800044eba16a741d30b30e, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8039786360550929777, guid: b2aacc2f6d800044eba16a741d30b30e, type: 3}
       propertyPath: m_Name
       value: Live
@@ -7638,7 +7554,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8039786360550929777, guid: b2aacc2f6d800044eba16a741d30b30e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1171408942}
   m_SourcePrefab: {fileID: 100100000, guid: b2aacc2f6d800044eba16a741d30b30e, type: 3}
 --- !u!1001 &8334104105618365338
 PrefabInstance:
@@ -7732,11 +7651,40 @@ PrefabInstance:
       propertyPath: m_Name
       value: PUP
       objectReference: {fileID: 0}
+    - target: {fileID: 8418886636691430737, guid: dc0b19e909165884caf783a4f0a2b54e, type: 3}
+      propertyPath: m_text
+      value: 'Poder: <color=red> Nenhum</color>'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3930476166327594944, guid: dc0b19e909165884caf783a4f0a2b54e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8334104105618365340}
   m_SourcePrefab: {fileID: 100100000, guid: dc0b19e909165884caf783a4f0a2b54e, type: 3}
+--- !u!1 &8334104105618365339 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3930476166327594944, guid: dc0b19e909165884caf783a4f0a2b54e, type: 3}
+  m_PrefabInstance: {fileID: 8334104105618365338}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8334104105618365340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8334104105618365339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b265d3df26856a043b7bf5d10ec74bde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translatedText: {fileID: 0}
+  config:
+    portugueseText: 'Poder: <color=red> Nenhum</color>'
+    englishText: 'PowerUp: <color=red> None</color>'
+  staticText: 1
 --- !u!1001 &8744853658710522202
 PrefabInstance:
   m_ObjectHideFlags: 0
