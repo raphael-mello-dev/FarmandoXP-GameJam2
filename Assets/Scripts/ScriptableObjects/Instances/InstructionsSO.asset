@@ -13,30 +13,30 @@ MonoBehaviour:
   m_Name: InstructionsSO
   m_EditorClassIdentifier: 
   instructionData:
-  - imageInstruction: {fileID: 0}
-    videoInstruction: {fileID: 32900000, guid: 19f1bed38d940b544af9cef3528cba96, type: 3}
+  - imageInstruction: {fileID: 21300000, guid: 9a012973400f8bb45905497ecb83e781, type: 3}
+    videoInstruction: {fileID: 0}
     description_pt: "Pressione o bot\xE3o esquerdo do mouse para acelerar\r"
     description_en: "Press the left button of the mouse to speed up\r"
-  - imageInstruction: {fileID: 0}
-    videoInstruction: {fileID: 32900000, guid: 48b7345a320736347b3cfac821e667dc, type: 3}
+  - imageInstruction: {fileID: 21300000, guid: 2850b289eb39cb44291a4ca573788731, type: 3}
+    videoInstruction: {fileID: 0}
     description_pt: "Pressione as teclas A e D para movimentar-se\r"
     description_en: "Press the A and D keys to move\r"
-  - imageInstruction: {fileID: 0}
-    videoInstruction: {fileID: 32900000, guid: 528cd6305e6bfb24292c6c4d1f961b88, type: 3}
+  - imageInstruction: {fileID: 21300000, guid: 7458ae439548a91438f0fcc97d67a644, type: 3}
+    videoInstruction: {fileID: 0}
     description_pt: "Pressione as teclas W e S para aumentar ou diminuir a altitude\r"
     description_en: "Press the W and S keys to increase or decrease altitude\r"
-  - imageInstruction: {fileID: 0}
-    videoInstruction: {fileID: 32900000, guid: 5054e502621522a489f6a84896edc8d8, type: 3}
+  - imageInstruction: {fileID: 21300000, guid: e535dceaff16e2b448ea39a4eae878d8, type: 3}
+    videoInstruction: {fileID: 0}
     description_pt: "Exitem correntes de vento, tome cuidado para s\xE3o ser atingido"
     description_en: There are wind currents, be careful to not be hit
-  - imageInstruction: {fileID: 0}
-    videoInstruction: {fileID: 32900000, guid: 221fd5ba110a70d4c991c975ec956a82, type: 3}
+  - imageInstruction: {fileID: 21300000, guid: 41b2dd99b35ec264fa712a964529acae, type: 3}
+    videoInstruction: {fileID: 0}
     description_pt: Raios que caem perto do drone causam falha do sinal, fazendo
       com que os controles se invertam
     description_en: Lightning striking near the drone causes signal failure, causing
       the controls to reverse
-  - imageInstruction: {fileID: 0}
-    videoInstruction: {fileID: 32900000, guid: e990279a32959314ab35b017677a7d09, type: 3}
+  - imageInstruction: {fileID: 21300000, guid: f2f92ac37022b9f41a377c053a756355, type: 3}
+    videoInstruction: {fileID: 0}
     description_pt: "There are three types of missions, which are:\n<b>Speed</b>
       :\nDeliver as quickly as possible\n<b>Temperature</b> :\nDeliver the package
       at the desired temperature\n<b>In time</b> : \nDeliver as close to the desired
