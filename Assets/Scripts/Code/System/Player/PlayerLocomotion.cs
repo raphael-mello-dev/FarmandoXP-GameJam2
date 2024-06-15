@@ -99,11 +99,11 @@ public class PlayerLocomotion : MonoBehaviour
         float speedFactor = CurrentSpeed / GetMaxSpeed();
 
         // Update yaw based on horizontal input
-        yaw += Movement.x * Time.deltaTime * yawMultiply * speedFactor;
+        yaw += Movement.x * Time.deltaTime * yawMultiply;
 
         // Calculate pitch and roll, reducing them based on current speed
-        float pitch = Mathf.Lerp(0, 20, Mathf.Abs(Movement.y) * speedFactor) * Mathf.Sign(Movement.y);
-        float roll = Mathf.Lerp(0, 20, Mathf.Abs(Movement.x) * speedFactor) * -Mathf.Sign(Movement.x);
+        float pitch = Mathf.Lerp(0, 20, Mathf.Abs(Movement.y)) * Mathf.Sign(Movement.y);
+        float roll = Mathf.Lerp(0, 20, Mathf.Abs(Movement.x)) * -Mathf.Sign(Movement.x);
 
         // Apply rotation
         transform.localRotation = Quaternion.Euler(pitch, sideScroller ? 0f : yaw, sideScroller ? 0f : roll);
