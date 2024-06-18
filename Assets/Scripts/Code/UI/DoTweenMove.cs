@@ -10,6 +10,6 @@ public class DoTweenMove : MonoBehaviour
 
     void Start()
     {
-        rect.DOLocalMoveX(600, 3).SetEase(Ease.OutSine);
+        rect.DOLocalMoveX(-550, 3).SetEase(Ease.OutSine);
     }
 }
